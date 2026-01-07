@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 1010">
+<rect width="1010" height="1010" fill="#fff"/>
+<g fill="#000">
+<!-- The QR code data from the image will be represented here -->
+<!-- This is a placeholder - you'll need to replace with your actual QR code -->
+<rect x="46" y="46" width="220" height="220"/>
+<rect x="744" y="46" width="220" height="220"/>
+<rect x="46" y="744" width="220" height="220"/>
+<!-- Add all other QR code patterns here -->
+</g>
+</svg>
