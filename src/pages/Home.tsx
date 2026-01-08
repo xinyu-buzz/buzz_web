@@ -7,6 +7,74 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <div>
+      {/* Video Hero Section */}
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video/Drone%20video.mov" type="video/quicktime" />
+          <source src="/video/Drone%20video.mov" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Dark Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Content Overlay - Positioned at top to avoid overlapping video text */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-start text-center px-4 pt-32 sm:pt-36 lg:pt-40">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg"
+          >
+            Experience the Future of
+            <br />
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+              Drone Technology
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md"
+          >
+            Watch our drones in action and discover what's possible
+          </motion.p>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <div className="flex flex-col items-center text-white/80">
+            <span className="text-sm mb-2">Scroll to explore</span>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
+        </motion.div>
+      </section>
+
       <Hero />
       <EcosystemSection />
 
