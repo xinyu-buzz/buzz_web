@@ -92,9 +92,6 @@ export default function Workforce() {
                 </svg>
                 Download on App Store
               </Button>
-              <Button variant="ghost" href="/contact">
-                Request Demo
-              </Button>
             </div>
             
             {/* QR Code */}

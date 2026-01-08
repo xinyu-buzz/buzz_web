@@ -99,10 +99,10 @@ export default function Footer() {
             <div className="mt-6">
               <h4 className="text-text-light font-semibold mb-2 text-sm">Connect</h4>
               <a
-                href="mailto:hello@buzz.com"
+                href="mailto:hello@buzzbuzzin.com"
                 className="text-muted hover:text-accent transition-colors text-sm"
               >
-                hello@buzz.com
+                hello@buzzbuzzin.com
               </a>
             </div>
           </div>

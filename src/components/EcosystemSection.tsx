@@ -47,6 +47,7 @@ export default function EcosystemSection() {
       ),
       href: '/drones',
       comingSoon: true,
+      comingSoonText: 'June 2026',
     },
     {
       title: 'Flight Simulations',
@@ -59,6 +60,7 @@ export default function EcosystemSection() {
       ),
       href: '/simulations',
       comingSoon: true,
+      comingSoonText: 'March 2026',
     },
     {
       title: 'Drone Software',
@@ -70,6 +72,7 @@ export default function EcosystemSection() {
       ),
       href: '/software',
       comingSoon: true,
+      comingSoonText: 'June 2026',
     },
   ];
 

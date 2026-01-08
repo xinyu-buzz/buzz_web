@@ -11,8 +11,8 @@ export default function Contact() {
       ),
       title: 'Email Us',
       description: 'Send us a message and we\'ll respond within 24 hours',
-      value: 'hello@buzz.com',
-      href: 'mailto:hello@buzz.com',
+      value: 'hello@buzzbuzzin.com',
+      href: 'mailto:hello@buzzbuzzin.com',
     },
     {
       icon: (
@@ -22,8 +22,8 @@ export default function Contact() {
       ),
       title: 'Business Inquiries',
       description: 'For partnerships and enterprise solutions',
-      value: 'business@buzz.com',
-      href: 'mailto:business@buzz.com',
+      value: 'hello@buzzbuzzin.com',
+      href: 'mailto:hello@buzzbuzzin.com',
     },
     {
       icon: (
@@ -33,8 +33,8 @@ export default function Contact() {
       ),
       title: 'Support',
       description: 'Technical support for our products and services',
-      value: 'support@buzz.com',
-      href: 'mailto:support@buzz.com',
+      value: 'hello@buzzbuzzin.com',
+      href: 'mailto:hello@buzzbuzzin.com',
     },
   ];
 
@@ -53,7 +53,7 @@ export default function Contact() {
     },
     {
       question: 'Can I become a beta tester?',
-      answer: 'Absolutely! Email us at hello@buzz.com with your interest and we\'ll add you to our beta program waiting list.',
+      answer: 'Absolutely! Email us at hello@buzzbuzzin.com with your interest and we\'ll add you to our beta program waiting list.',
     },
   ];
 
@@ -78,7 +78,7 @@ export default function Contact() {
                 <motion.a
                   href={method.href}
                   whileHover={{ y: -5 }}
-                  className="block bg-card-dark border border-border rounded-2xl p-8 hover:border-primary/50 transition-all group"
+                  className="block bg-card-dark border border-border rounded-2xl p-8 hover:border-primary/50 transition-all group h-full"
                 >
                   <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all">
                     {method.icon}
@@ -132,8 +132,8 @@ export default function Contact() {
               <div className="mt-8 p-6 bg-card-dark/50 rounded-xl">
                 <p className="text-sm text-muted">
                   For immediate assistance, email us directly at{' '}
-                  <a href="mailto:hello@buzz.com" className="text-accent hover:underline font-semibold">
-                    hello@buzz.com
+                  <a href="mailto:hello@buzzbuzzin.com" className="text-accent hover:underline font-semibold">
+                    hello@buzzbuzzin.com
                   </a>
                 </p>
               </div>
