@@ -111,7 +111,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted text-sm">
-            © {currentYear} Buzz. All rights reserved.
+            © {currentYear} Buzz Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-muted hover:text-accent transition-colors text-sm">
