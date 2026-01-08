@@ -114,9 +114,9 @@ export default function Footer() {
             © {currentYear} Buzz Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-muted hover:text-accent transition-colors text-sm">
+            <Link to="/privacy" className="text-muted hover:text-accent transition-colors text-sm">
               Privacy Policy
-            </a>
+            </Link>
             <a href="#" className="text-muted hover:text-accent transition-colors text-sm">
               Terms of Service
             </a>
