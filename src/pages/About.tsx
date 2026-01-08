@@ -22,9 +22,9 @@ export default function About() {
   ];
 
   const timeline = [
-    { year: '2020', event: 'Buzz founded with a vision to revolutionize drone operations' },
+    { year: '2020', event: 'Implemented a drone workforce under production house' },
     { year: '2021', event: 'Launched Buzz Academy with first pilot training courses' },
-    { year: '2022', event: 'Released Buzz Workforce iOS app for operations management' },
+    { year: '2022', event: 'Buzz became a standalone company' },
     { year: '2023', event: 'Launched Buzz Portal for enterprise-scale operations' },
     { year: '2024', event: 'Growing rapidly with pilot training programs' },
     { year: '2026', event: 'Expanding into drone manufacturing, simulations, and software' },

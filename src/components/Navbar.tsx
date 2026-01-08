@@ -15,6 +15,7 @@ export default function Navbar() {
     { name: 'Simulations', path: '/simulations' },
     { name: 'Software', path: '/software' },
     { name: 'About', path: '/about' },
+    { name: 'Media', path: '/media' },
     { name: 'Contact', path: '/contact' },
   ];
 
