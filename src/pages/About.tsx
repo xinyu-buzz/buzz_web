@@ -27,6 +27,7 @@ export default function About() {
     { year: '2022', event: 'Buzz became a standalone company' },
     { year: '2023', event: 'Launched Buzz Portal for enterprise-scale operations' },
     { year: '2024', event: 'Growing rapidly with pilot training programs' },
+    { year: '2025', event: 'Buzz App launched in App Store' },
     { year: '2026', event: 'Expanding into drone manufacturing, simulations, and software' },
   ];
 
