@@ -40,20 +40,20 @@ export default function Contact() {
 
   const faqs = [
     {
-      question: 'How do I get started with Buzz?',
-      answer: 'Start with Buzz Academy to get trained, then download Buzz Workforce to manage operations. Contact us for enterprise Portal access.',
+      question: 'How do pilots join the Buzz Workforce app?',
+      answer: 'Download the Buzz Workforce app from the App Store. Create your pilot profile, verify your credentials, and start accepting flight opportunities instantly. The app uses advanced matching technology to connect you with nearby jobs.',
     },
     {
-      question: 'Do you offer enterprise solutions?',
-      answer: 'Yes! Buzz Portal offers comprehensive enterprise solutions with custom pricing, dedicated support, and advanced features.',
+      question: 'What FAA requirements do I need to meet?',
+      answer: 'You must hold a valid Part 107 Remote Pilot Certificate issued by the FAA. The app verifies your certification status and ensures all pilots meet current FAA regulations before they can accept jobs.',
     },
     {
-      question: 'When will the new products launch?',
-      answer: 'Drone manufacturing is planned for Q2 2026, simulations for Q3 2026, and software suite for Q4 2026.',
+      question: 'How do I complete my flight review in the app?',
+      answer: 'The app integrates with FAA systems to track your flight review status. When your flight review is due, you\'ll receive notifications and can schedule your review through the app. Completed reviews are automatically verified and updated in your profile.',
     },
     {
-      question: 'Can I become a beta tester?',
-      answer: 'Absolutely! Email us at hello@buzzbuzzin.com with your interest and we\'ll add you to our beta program waiting list.',
+      question: 'How do I join the Beacon Community?',
+      answer: 'The Beacon Community is automatically available to all verified pilots on the Buzz Workforce platform. Once you\'re verified and active, you\'ll have access to community features, including real-time notifications for nearby opportunities and community support resources.',
     },
   ];
 
@@ -139,7 +139,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Office Locations (Placeholder) */}
+            {/* Office Locations */}
             <div>
               <h2 className="text-3xl font-bold text-text-light mb-6">
                 Our Locations
@@ -150,17 +150,65 @@ export default function Contact() {
                   className="bg-card-dark border border-border rounded-xl p-6"
                 >
                   <h3 className="text-lg font-bold text-text-light mb-2">
-                    Headquarters
+                    US Company, Global Reach
                   </h3>
                   <p className="text-muted text-sm mb-4">
-                    Where innovation takes flight
+                    We are a US company with offices across the United States, but our app serves customers globally.
                   </p>
-                  <div className="flex items-start gap-3 text-muted text-sm">
-                    <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>Location details available upon request</span>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="bg-card-dark border border-border rounded-xl p-6"
+                >
+                  <h3 className="text-lg font-bold text-text-light mb-3">
+                    Current Offices
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3 text-muted text-sm">
+                      <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <div>
+                        <span className="text-text-light font-semibold">New York</span>
+                        <span className="text-muted">, United States</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="bg-card-dark border border-primary/30 rounded-xl p-6"
+                >
+                  <h3 className="text-lg font-bold text-text-light mb-2">
+                    Coming Soon
+                  </h3>
+                  <p className="text-muted text-sm mb-3">
+                    We're expanding! New locations opening soon:
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-3 text-muted text-sm">
+                      <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <div>
+                        <span className="text-accent font-semibold">Space Coast</span>
+                        <span className="text-muted">, United States</span>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 text-muted text-sm">
+                      <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <div>
+                        <span className="text-accent font-semibold">El Segundo</span>
+                        <span className="text-muted">, United States</span>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
 
