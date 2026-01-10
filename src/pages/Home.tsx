@@ -40,14 +40,6 @@ export default function Home() {
             </span>
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md"
-          >
-            Watch our drones in action and discover what's possible
-          </motion.p>
         </div>
 
         {/* Scroll Indicator */}
@@ -109,7 +101,7 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'Beacon Technology',
-                description: 'Revolutionary system connecting verified pilots with opportunities through our proprietary beacon network.',
+                description: 'Revolutionary system connecting verified pilots with opportunities through our proprietary beacon community.',
               },
               {
                 icon: (

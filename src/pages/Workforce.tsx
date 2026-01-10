@@ -29,8 +29,8 @@ export default function Workforce() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      title: 'Beacon Network',
-      description: 'Pilots in your area, ready to fly. Opportunities in your area, ready to accept. Connect instantly.',
+      title: 'Beacon Community',
+      description: 'Like neighbors showing up with water when your BBQ catches fire, or rallying for serious matters that risk your community. A community that\'s there when it matters—for work and for what matters most.',
     },
     {
       icon: (
@@ -39,7 +39,7 @@ export default function Workforce() {
         </svg>
       ),
       title: 'Zero Hassle',
-      description: 'No scheduling headaches. No compliance paperwork. Just simple, smooth operations.',
+      description: 'No scheduling headaches. No compliance paperwork. Just simple, smooth.',
     },
     {
       icon: (
@@ -48,7 +48,7 @@ export default function Workforce() {
         </svg>
       ),
       title: 'Always Connected',
-      description: 'Real-time updates. Instant notifications. Know exactly what happens, when it happens.',
+      description: 'Instant notifications to nearby pilots when new bookings drop. Real-time flight status updates. Know exactly what\'s happening, when it\'s happening, so you never miss an opportunity.',
     },
     {
       icon: (
@@ -56,8 +56,8 @@ export default function Workforce() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
-      title: 'Built for iPhone',
-      description: 'Native iOS app that feels natural, works flawlessly, and looks stunning.',
+      title: 'Built for Mobile',
+      description: 'Native iOS and Android apps that feel natural, work flawlessly, and look stunning.',
     },
   ];
 
