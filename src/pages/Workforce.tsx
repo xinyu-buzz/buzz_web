@@ -126,10 +126,10 @@ export default function Workforce() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 0.1}>
+              <AnimatedSection key={feature.title} delay={index * 0.1} className="h-full">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-card-dark border border-border rounded-xl p-6"
+                  className="bg-card-dark border border-border rounded-xl p-6 h-full flex flex-col"
                 >
                   <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 text-primary">
                     {feature.icon}
@@ -137,7 +137,7 @@ export default function Workforce() {
                   <h3 className="text-lg font-bold text-text-light mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-muted text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed flex-grow">
                     {feature.description}
                   </p>
                 </motion.div>
