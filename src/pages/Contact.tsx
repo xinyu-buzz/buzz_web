@@ -636,12 +636,12 @@ export default function Contact() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {faqs.map((faq, index) => (
-              <AnimatedSection key={faq.question} delay={index * 0.1}>
-                <div className="bg-background-dark/50 rounded-xl p-6">
+              <AnimatedSection key={faq.question} delay={index * 0.1} className="h-full">
+                <div className="bg-background-dark/50 rounded-xl p-6 h-full flex flex-col">
                   <h3 className="text-lg font-bold text-text-light mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-muted text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed flex-grow">
                     {faq.answer}
                   </p>
                 </div>
