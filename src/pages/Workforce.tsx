@@ -7,20 +7,20 @@ export default function Workforce() {
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      title: 'AI-Powered Scheduling',
-      description: 'Revolutionary intelligent scheduling technology that automatically optimizes pilot availability, equipment, and client needs.',
+      title: 'Instant Matching',
+      description: 'Hit a button. The perfect pilot for your job appears. Like magic, but better.',
     },
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      title: 'Automated Compliance',
-      description: 'Industry-first automated compliance monitoring ensuring all pilots meet certification and regulatory requirements in real-time.',
+      title: 'Verified Pilots Only',
+      description: 'Every pilot is certified, insured, and ready. You get pros, not problems.',
     },
     {
       icon: (
@@ -29,26 +29,26 @@ export default function Workforce() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      title: 'Beacon Technology',
-      description: 'Our proprietary beacon program connects verified pilots with opportunities, creating a decentralized professional network.',
+      title: 'Beacon Network',
+      description: 'Pilots in your area, ready to fly. Opportunities in your area, ready to accept. Connect instantly.',
     },
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: 'Real-Time Analytics',
-      description: 'Advanced data analytics providing actionable insights that transform how drone operations are managed.',
+      title: 'Zero Hassle',
+      description: 'No scheduling headaches. No compliance paperwork. Just simple, smooth operations.',
     },
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
         </svg>
       ),
-      title: 'Instant Coordination',
-      description: 'Lightning-fast communication technology enabling seamless coordination between pilots, equipment, and clients.',
+      title: 'Always Connected',
+      description: 'Real-time updates. Instant notifications. Know exactly what happens, when it happens.',
     },
     {
       icon: (
@@ -56,8 +56,8 @@ export default function Workforce() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
-      title: 'Mobile-First Platform',
-      description: 'Built from the ground up for iOS, delivering a native experience that sets the industry standard.',
+      title: 'Built for iPhone',
+      description: 'Native iOS app that feels natural, works flawlessly, and looks stunning.',
     },
   ];
 
@@ -80,9 +80,9 @@ export default function Workforce() {
             Buzz Workforce
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-            First-to-market iOS app revolutionizing how drone pilots work. Cutting-edge technology 
-            empowering operators with intelligent scheduling, real-time coordination, and compliance automation. 
-            Available now on the App Store.
+            One tap. The right pilot shows up. Every time. The first-to-market app connecting 
+            verified drone pilots with opportunities instantly. For pilots: accept, show up, deliver. 
+            For clients: request, relax, receive. Available now on the App Store.
           </p>
           
           <div className="flex flex-col items-center justify-center gap-6">
@@ -118,9 +118,12 @@ export default function Workforce() {
 
         {/* Features Grid */}
         <AnimatedSection className="mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            Powerful Features
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-4">
+            It Just Works
           </h2>
+          <p className="text-xl text-muted text-center max-w-2xl mx-auto mb-12">
+            Everything you need, nothing you don't. No complexity, no confusion.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.1}>
@@ -143,58 +146,83 @@ export default function Workforce() {
           </div>
         </AnimatedSection>
 
-        {/* Industry Transformation Section */}
+        {/* Why Join The Buzz Section */}
         <AnimatedSection className="mb-20 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-3xl p-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-6 text-center">
-            Transforming the Drone Industry
+            Why Everyone Wants In
           </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto mb-8 text-center">
-            We're not managing drone operations—we're revolutionizing how pilots work. 
-            Our technology empowers operators with tools to coordinate their own missions, 
-            manage their certifications, and connect with opportunities through our innovative beacon system.
+          <p className="text-xl text-muted max-w-3xl mx-auto mb-12 text-center">
+            The first app of its kind. Pilots love it. Clients can't live without it. 
+            Here's why there's a Buzz.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
             {[
               {
-                title: 'First to Market',
-                description: 'Pioneering the first comprehensive workforce management app specifically built for drone pilots.',
+                title: 'For Pilots',
+                subtitle: 'Work on Your Terms',
+                points: [
+                  'See gigs near you instantly',
+                  'Accept what you want, when you want',
+                  'Show up, fly, get paid',
+                  'Build your reputation',
+                  'No bureaucracy, just flying'
+                ],
               },
               {
-                title: 'Pilot Empowerment',
-                description: 'Technology that gives pilots control over their careers, not another layer of management.',
+                title: 'For Clients',
+                subtitle: 'Get Results, Not Excuses',
+                points: [
+                  'Request a pilot in seconds',
+                  'Verified professionals every time',
+                  'Track progress in real-time',
+                  'Receive high-quality deliverables',
+                  'No overhead, no hassle'
+                ],
               },
-              {
-                title: 'Beacon Network',
-                description: 'Revolutionary system connecting qualified pilots directly with opportunities in their area.',
-              },
-            ].map((item, index) => (
+            ].map((section, index) => (
               <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={section.title}
+                initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
+                transition={{ delay: 0.2 }}
+                className="bg-card-dark/50 border border-border rounded-2xl p-8"
               >
-                <h3 className="text-xl font-bold text-accent mb-3">
-                  {item.title}
+                <h3 className="text-2xl font-bold text-accent mb-2">
+                  {section.title}
                 </h3>
-                <p className="text-muted">
-                  {item.description}
-                </p>
+                <p className="text-lg text-text-light mb-4">{section.subtitle}</p>
+                <ul className="space-y-3">
+                  {section.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-muted">{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
+          </div>
+          <div className="text-center">
+            <p className="text-lg text-muted mb-4">
+              First-to-market technology. Zero complexity. Pure results.
+            </p>
+            <p className="text-2xl font-bold text-text-light">
+              That's the Buzz.
+            </p>
           </div>
         </AnimatedSection>
 
         {/* Screenshot Section */}
         <AnimatedSection className="bg-card-dark/50 rounded-3xl p-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-6 text-center">
-            Technology-First Design
+            Simple for Anyone, Powerful for Everyone
           </h2>
           <p className="text-xl text-muted max-w-2xl mx-auto mb-8 text-center">
-            Native iOS application leveraging cutting-edge mobile technology. 
-            Built for speed, reliability, and the modern drone pilot.
+            Designed for pilots, built for scale. One app that works perfectly 
+            whether you're booking your first flight or coordinating hundreds.
           </p>
           
           {/* Screenshots Grid */}
