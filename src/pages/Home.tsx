@@ -113,10 +113,10 @@ export default function Home() {
                 description: 'Technology that gives pilots control—intelligent scheduling, automated compliance, and seamless coordination tools.',
               },
             ].map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 0.2}>
+              <AnimatedSection key={feature.title} delay={index * 0.2} className="h-full">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-card-dark border border-border rounded-2xl p-8 text-center"
+                  className="bg-card-dark border border-border rounded-2xl p-8 text-center h-full flex flex-col"
                 >
                   <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-6 text-primary">
                     {feature.icon}
@@ -124,7 +124,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-text-light mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-muted leading-relaxed">
+                  <p className="text-muted leading-relaxed flex-grow">
                     {feature.description}
                   </p>
                 </motion.div>
