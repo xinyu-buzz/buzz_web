@@ -19,3 +19,9 @@ export const getContactFormUrl = () => {
   if (!supabaseUrl) return '';
   return `${supabaseUrl}/functions/v1/contact-form`;
 };
+
+// Edge Function URL for newsletter subscription
+export const getNewsletterUrl = () => {
+  if (!supabaseUrl) return '';
+  return `${supabaseUrl}/functions/v1/newsletter`;
+};

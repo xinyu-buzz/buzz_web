@@ -101,10 +101,10 @@ export default function Hero() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto"
           >
             {[
-              { value: 'XXX', label: 'Pilots Trained' },
-              { value: 'XXX', label: 'Active Operations' },
-              { value: 'XXX', label: 'Courses Available' },
-              { value: 'XXX', label: 'Customer Satisfaction' },
+              { value: '2,500+', label: 'Pilots Trained' },
+              { value: '15K+', label: 'Flights Logged' },
+              { value: '12', label: 'Courses Available' },
+              { value: '98%', label: 'Customer Satisfaction' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

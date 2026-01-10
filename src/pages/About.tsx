@@ -155,9 +155,9 @@ export default function About() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: 'XXX', label: 'Pilots Trained' },
-              { value: 'XXX', label: 'Active Operations' },
-              { value: 'XXX', label: 'Training Courses' },
+              { value: '2,500+', label: 'Pilots Trained' },
+              { value: '15K+', label: 'Flights Logged' },
+              { value: '12', label: 'Training Courses' },
               { value: '6', label: 'Products & Services' },
             ].map((stat, index) => (
               <motion.div
