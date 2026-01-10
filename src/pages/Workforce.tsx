@@ -222,7 +222,7 @@ export default function Workforce() {
             Simple for Anyone, Powerful for Everyone
           </h2>
           <p className="text-xl text-muted max-w-2xl mx-auto mb-8 text-center">
-            Designed for pilots, built for scale. One app that works perfectly 
+            Designed for pilots and customers, built for scale. One app that works perfectly 
             whether you're booking your first flight or coordinating hundreds.
           </p>
           
