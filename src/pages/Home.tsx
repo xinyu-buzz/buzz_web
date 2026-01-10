@@ -83,10 +83,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-text-light mb-4">
-              Why Choose Buzz?
+              Technology-Driven Innovation
             </h2>
             <p className="text-xl text-muted max-w-3xl mx-auto">
-              We're not just another drone company. We're building the future of the industry.
+              We're not managing operations—we're revolutionizing how the drone industry works. 
+              First-to-market technology empowering pilots and transforming the workforce.
             </p>
           </div>
 
@@ -98,26 +99,26 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 ),
-                title: 'All-in-One Platform',
-                description: 'Everything from training to operations to manufacturing in one seamless ecosystem.',
+                title: 'First to Market',
+                description: 'Pioneering mobile-first workforce technology built specifically for drone pilots. Our iOS app sets the industry standard.',
               },
               {
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 ),
-                title: 'Industry Leading',
-                description: 'Trusted by thousands of pilots and operators worldwide for mission-critical operations.',
+                title: 'Beacon Technology',
+                description: 'Revolutionary system connecting verified pilots with opportunities through our proprietary beacon network.',
               },
               {
                 icon: (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                   </svg>
                 ),
-                title: 'Continuous Innovation',
-                description: 'Constantly evolving with new features, drones, and training programs coming in 2026.',
+                title: 'Empowering Pilots',
+                description: 'Technology that gives pilots control—intelligent scheduling, automated compliance, and seamless coordination tools.',
               },
             ].map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.2}>
@@ -146,17 +147,18 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-3xl p-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-4">
-              Ready to Get Started?
+              Join the Revolution
             </h2>
             <p className="text-xl text-muted mb-8">
-              Join thousands of pilots and operators using Buzz to elevate their drone operations.
+              Experience the first-to-market workforce technology that's transforming how drone pilots work. 
+              Download our iOS app and be part of the future.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="primary" href="/workforce">
-                Download App
+                Download Workforce App
               </Button>
               <Button variant="secondary" href="/academy">
-                Browse Courses
+                Explore Training
               </Button>
             </div>
           </div>

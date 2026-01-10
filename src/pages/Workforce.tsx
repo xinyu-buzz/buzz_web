@@ -10,8 +10,8 @@ export default function Workforce() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
       ),
-      title: 'Smart Scheduling',
-      description: 'Intelligent pilot and drone scheduling with conflict detection and optimization.',
+      title: 'AI-Powered Scheduling',
+      description: 'Revolutionary intelligent scheduling technology that automatically optimizes pilot availability, equipment, and client needs.',
     },
     {
       icon: (
@@ -19,8 +19,8 @@ export default function Workforce() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
         </svg>
       ),
-      title: 'Compliance Tracking',
-      description: 'Automatic tracking of licenses, certifications, and regulatory requirements.',
+      title: 'Automated Compliance',
+      description: 'Industry-first automated compliance monitoring ensuring all pilots meet certification and regulatory requirements in real-time.',
     },
     {
       icon: (
@@ -29,8 +29,8 @@ export default function Workforce() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      title: 'Real-Time Tracking',
-      description: 'Live location tracking of pilots and drones during operations.',
+      title: 'Beacon Technology',
+      description: 'Our proprietary beacon program connects verified pilots with opportunities, creating a decentralized professional network.',
     },
     {
       icon: (
@@ -38,26 +38,26 @@ export default function Workforce() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
-      title: 'Analytics & Reports',
-      description: 'Comprehensive reporting and analytics for operations management.',
+      title: 'Real-Time Analytics',
+      description: 'Advanced data analytics providing actionable insights that transform how drone operations are managed.',
     },
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      title: 'Team Management',
-      description: 'Manage pilot teams, assign roles, and collaborate seamlessly.',
+      title: 'Instant Coordination',
+      description: 'Lightning-fast communication technology enabling seamless coordination between pilots, equipment, and clients.',
     },
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
-      title: 'Instant Notifications',
-      description: 'Real-time alerts for assignments, updates, and important events.',
+      title: 'Mobile-First Platform',
+      description: 'Built from the ground up for iOS, delivering a native experience that sets the industry standard.',
     },
   ];
 
@@ -80,7 +80,8 @@ export default function Workforce() {
             Buzz Workforce
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-            The ultimate iOS app for scheduling drone operations, pilots, and compliance. 
+            First-to-market iOS app revolutionizing how drone pilots work. Cutting-edge technology 
+            empowering operators with intelligent scheduling, real-time coordination, and compliance automation. 
             Available now on the App Store.
           </p>
           
@@ -142,14 +143,58 @@ export default function Workforce() {
           </div>
         </AnimatedSection>
 
+        {/* Industry Transformation Section */}
+        <AnimatedSection className="mb-20 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-3xl p-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-6 text-center">
+            Transforming the Drone Industry
+          </h2>
+          <p className="text-xl text-muted max-w-3xl mx-auto mb-8 text-center">
+            We're not managing drone operations—we're revolutionizing how pilots work. 
+            Our technology empowers operators with tools to coordinate their own missions, 
+            manage their certifications, and connect with opportunities through our innovative beacon system.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                title: 'First to Market',
+                description: 'Pioneering the first comprehensive workforce management app specifically built for drone pilots.',
+              },
+              {
+                title: 'Pilot Empowerment',
+                description: 'Technology that gives pilots control over their careers, not another layer of management.',
+              },
+              {
+                title: 'Beacon Network',
+                description: 'Revolutionary system connecting qualified pilots directly with opportunities in their area.',
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <h3 className="text-xl font-bold text-accent mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-muted">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+
         {/* Screenshot Section */}
         <AnimatedSection className="bg-card-dark/50 rounded-3xl p-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-6 text-center">
-            Designed for Pilots, Built for Scale
+            Technology-First Design
           </h2>
           <p className="text-xl text-muted max-w-2xl mx-auto mb-8 text-center">
-            Intuitive interface meets powerful functionality. Manage everything from 
-            individual flights to enterprise-scale operations with ease.
+            Native iOS application leveraging cutting-edge mobile technology. 
+            Built for speed, reliability, and the modern drone pilot.
           </p>
           
           {/* Screenshots Grid */}

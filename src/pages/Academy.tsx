@@ -5,32 +5,46 @@ import { motion } from 'framer-motion';
 export default function Academy() {
   const courses = [
     {
+      title: 'ROC-A Certification',
+      level: 'Advanced',
+      duration: 'In-Person & Online',
+      students: 'XXX students',
+      description: 'Remotely Piloted Aircraft - Advanced certification with comprehensive in-person flight reviews.',
+    },
+    {
+      title: 'In-Person Flight Review',
+      level: 'All Levels',
+      duration: 'Scheduled Sessions',
+      students: 'XXX students',
+      description: 'Hands-on flight training and assessment with experienced instructors to elevate your skills.',
+    },
+    {
+      title: 'Basic Firefighting Training',
+      level: 'Professional Development',
+      duration: 'XX hours',
+      students: 'XXX students',
+      description: 'Essential firefighting skills for drone pilots working in emergency response scenarios.',
+    },
+    {
+      title: 'CPR & First Aid',
+      level: 'All Levels',
+      duration: 'XX hours',
+      students: 'XXX students',
+      description: 'Critical emergency response training for field operations and safety compliance.',
+    },
+    {
       title: 'UAS Pilot Certification',
       level: 'Beginner to Advanced',
       duration: 'XX hours',
       students: 'XXX students',
-      description: 'Complete certification program for aspiring drone pilots.',
-    },
-    {
-      title: 'Commercial Operations',
-      level: 'Intermediate',
-      duration: 'XX hours',
-      students: 'XXX students',
-      description: 'Learn to conduct professional drone operations for clients.',
+      description: 'Complete online certification program for aspiring commercial drone pilots.',
     },
     {
       title: 'Advanced Flight Techniques',
       level: 'Advanced',
       duration: 'XX hours',
       students: 'XXX students',
-      description: 'Master complex maneuvers and challenging flight scenarios.',
-    },
-    {
-      title: 'Regulations & Safety',
-      level: 'All Levels',
-      duration: 'XX hours',
-      students: 'XXX students',
-      description: 'Essential knowledge of aviation regulations and safety protocols.',
+      description: 'Master complex maneuvers and challenging flight scenarios with expert instruction.',
     },
   ];
 
@@ -53,8 +67,10 @@ export default function Academy() {
             Buzz Academy
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-            World-class online training for drone pilots. From beginner to expert, 
-            we have courses to help you achieve your goals.
+            Comprehensive online training platform for drone pilots, featuring in-person flight reviews 
+            and ROC-A certification to elevate the drone industry. We also partner with leading organizations 
+            to offer essential training including basic Firefighting, CPR, and other critical skills. 
+            From beginner to expert, we provide the complete education you need.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -134,7 +150,10 @@ export default function Academy() {
 
         {/* Features */}
         <AnimatedSection className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-3xl p-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-text-light text-center mb-8">
+            Comprehensive Training Solutions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {[
               {
                 icon: (
@@ -143,17 +162,17 @@ export default function Academy() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ),
-                title: 'Video Lessons',
-                description: 'HD video content from expert instructors',
+                title: 'Online Platform',
+                description: 'HD video lessons and interactive content accessible anytime',
               },
               {
                 icon: (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 ),
-                title: 'Study Materials',
-                description: 'Downloadable guides and resources',
+                title: 'In-Person Reviews',
+                description: 'Hands-on flight reviews with expert instructors',
               },
               {
                 icon: (
@@ -161,8 +180,17 @@ export default function Academy() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 ),
-                title: 'Certification',
-                description: 'Earn recognized industry certifications',
+                title: 'ROC-A Certification',
+                description: 'Advanced certification programs for professional pilots',
+              },
+              {
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                ),
+                title: 'Emergency Training',
+                description: 'Firefighting, CPR, and other essential safety courses',
               },
             ].map((feature) => (
               <div key={feature.title} className="text-center">

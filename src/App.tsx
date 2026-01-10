@@ -4,7 +4,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Workforce from './pages/Workforce';
 import Academy from './pages/Academy';
-import Portal from './pages/Portal';
 import Drones from './pages/Drones';
 import Simulations from './pages/Simulations';
 import Software from './pages/Software';
@@ -24,7 +23,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/workforce" element={<Workforce />} />
             <Route path="/academy" element={<Academy />} />
-            <Route path="/portal" element={<Portal />} />
             <Route path="/drones" element={<Drones />} />
             <Route path="/simulations" element={<Simulations />} />
             <Route path="/software" element={<Software />} />

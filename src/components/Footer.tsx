@@ -7,7 +7,6 @@ export default function Footer() {
   const productLinks = [
     { name: 'Workforce', path: '/workforce' },
     { name: 'Academy', path: '/academy' },
-    { name: 'Portal', path: '/portal' },
   ];
 
   const comingSoonLinks = [
