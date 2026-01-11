@@ -75,11 +75,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-text-light mb-4">
-              Built Different. Built First.
+            Built First. Built Different.
             </h2>
             <p className="text-xl text-muted max-w-3xl mx-auto">
-              Fleet companies manage drones. We built the platform that's changing the game. 
-              First-to-market tech. Real results. This is how the drone industry evolves.
+              Fleet companies manage drones, but we're here to shake things up!<br />
+              Our groundbreaking platform is first to market, delivering jaw-dropping&nbsp;results.<br />
+              This is how the drone industry truly evolves!
             </p>
           </div>
 
@@ -92,7 +93,7 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'First to Market',
-                description: 'No one else has this. Mobile-first workforce tech built for drone pilots. Our iOS app didn\'t follow the standard—it set it.',
+                description: 'No one else has this. Mobile-first workforce tech built for drone pilots. Our app didn\'t follow the standard—it set it.',
               },
               {
                 icon: (
@@ -110,7 +111,7 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'Pilots in Control',
-                description: 'Your schedule. Your gigs. Your career. Smart tools for scheduling, compliance, and coordination—all in your hands.',
+                description: 'Your schedule. Your assignments. Your career. Smart tools for scheduling, compliance, and coordination—all in your hands.',
               },
             ].map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.2} className="h-full">

@@ -71,7 +71,7 @@ export default function About() {
                   pilots juggling a dozen apps just to get things done. We knew there had to be a better way.
                 </p>
                 <p>
-                  So we built one. Academy for training. Workforce for gigs. A platform that connects 
+                  So we built one. Academy for training. Workforce for assignments. A platform that connects 
                   pilots and customers seamlessly. Everything a drone pro needs, in one place.
                 </p>
                 <p>
