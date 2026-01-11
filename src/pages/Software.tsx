@@ -65,7 +65,7 @@ export default function Software() {
     { title: 'Python SDK', description: 'Ship fast. Full-featured library for devs who move.' },
     { title: 'JavaScript SDK', description: 'Web-native. Build drone apps for the browser.' },
     { title: 'REST API', description: 'Universal access. Works with anything, anywhere.' },
-    { title: 'WebSocket API', description: 'Live data. Real-time control. Zero lag.' },
+    { title: 'WebSocket API', description: <>Live data. Real-time control.<br />Zero lag.</> },
   ];
 
   return (

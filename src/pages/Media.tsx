@@ -170,27 +170,6 @@ export default function Media() {
             </AnimatedSection>
           ))}
         </AnimatedSection>
-
-        {/* Contact for Media */}
-        <AnimatedSection className="mt-20 text-center">
-          <div className="bg-card-dark border border-border rounded-2xl p-10 max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-light mb-4">
-              Media Inquiries
-            </h2>
-            <p className="text-muted mb-6">
-              For press inquiries, interview requests, or media partnerships, please contact us.
-            </p>
-            <a
-              href="mailto:hello@buzzbuzzin.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-semibold transition-all"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Contact Media Team
-            </a>
-          </div>
-        </AnimatedSection>
       </div>
     </div>
   );

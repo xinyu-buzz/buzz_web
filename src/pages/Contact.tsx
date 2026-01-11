@@ -23,6 +23,12 @@ interface FormErrors {
 
 const categories = [
   {
+    id: 'academy',
+    label: 'Academy',
+    email: 'hello@buzzacademy.world',
+    description: 'Buzz Academy related inquiries',
+  },
+  {
     id: 'technical',
     label: 'Technical Support',
     email: 'technical@buzzbuzzin.com',
@@ -30,21 +36,9 @@ const categories = [
   },
   {
     id: 'support',
-    label: 'Customer Support',
+    label: 'Customer Care',
     email: 'hello@buzzbuzzin.com',
     description: 'General customer support',
-  },
-  {
-    id: 'academy',
-    label: 'Academy',
-    email: 'hello@buzzacademy.world',
-    description: 'Buzz Academy related inquiries',
-  },
-  {
-    id: 'media',
-    label: 'Media',
-    email: 'media@buzzbuzzin.com',
-    description: 'Interview requests and press inquiries',
   },
   {
     id: 'bd',
@@ -57,6 +51,12 @@ const categories = [
     label: 'Partnerships',
     email: 'partnerships@buzzbuzzin.com',
     description: 'Partnership inquiries and collaboration proposals only',
+  },
+  {
+    id: 'media',
+    label: 'Media',
+    email: 'media@buzzbuzzin.com',
+    description: 'Interview requests and press inquiries',
   },
 ];
 
@@ -274,209 +274,209 @@ export default function Contact() {
                 ) : (
                   <form onSubmit={handleSubmit} className="flex-grow flex flex-col">
                     <div className="space-y-6 flex-grow flex flex-col">
-                      {/* Name and Email Row */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="name" className="block text-sm font-semibold text-text-light mb-2">
-                            Name <span className="text-accent">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            className={`w-full px-4 py-3 bg-background-dark border ${
-                              errors.name ? 'border-red-500' : 'border-border'
-                            } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
-                            placeholder="Your full name"
-                          />
-                          {errors.name && (
-                            <p className="mt-1 text-sm text-red-500">{errors.name}</p>
-                          )}
-                        </div>
-                        <div>
-                          <label htmlFor="email" className="block text-sm font-semibold text-text-light mb-2">
-                            Email <span className="text-accent">*</span>
-                          </label>
-                          <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            className={`w-full px-4 py-3 bg-background-dark border ${
-                              errors.email ? 'border-red-500' : 'border-border'
-                            } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
-                            placeholder="your@email.com"
-                          />
-                          {errors.email && (
-                            <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Company and Phone Row */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                          <label htmlFor="company" className="block text-sm font-semibold text-text-light mb-2">
-                            Company / Organization
-                          </label>
-                          <input
-                            type="text"
-                            id="company"
-                            name="company"
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            className="w-full px-4 py-3 bg-background-dark border border-border rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                            placeholder="Your company name"
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="phone" className="block text-sm font-semibold text-text-light mb-2">
-                            Phone Number
-                          </label>
-                          <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            className="w-full px-4 py-3 bg-background-dark border border-border rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                            placeholder="+1 (555) 123-4567"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Category Dropdown */}
+                    {/* Name and Email Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="category" className="block text-sm font-semibold text-text-light mb-2">
-                          Category <span className="text-accent">*</span>
-                        </label>
-                        <select
-                          id="category"
-                          name="category"
-                          value={formData.category}
-                          onChange={handleInputChange}
-                          className={`w-full px-4 py-3 bg-background-dark border ${
-                            errors.category ? 'border-red-500' : 'border-border'
-                          } rounded-xl text-text-light focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none cursor-pointer`}
-                          style={{
-                            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'right 1rem center',
-                            backgroundSize: '1.5rem',
-                          }}
-                        >
-                          <option value="" className="bg-background-dark">Select a category...</option>
-                          {categories.map((cat) => (
-                            <option key={cat.id} value={cat.id} className="bg-background-dark">
-                              {cat.label}
-                            </option>
-                          ))}
-                        </select>
-                        {errors.category && (
-                          <p className="mt-1 text-sm text-red-500">{errors.category}</p>
-                        )}
-                        {formData.category && (
-                          <p className="mt-2 text-sm text-muted">
-                            {categories.find((cat) => cat.id === formData.category)?.description}
-                          </p>
-                        )}
-                      </div>
-
-                      {/* Subject */}
-                      <div>
-                        <label htmlFor="subject" className="block text-sm font-semibold text-text-light mb-2">
-                          Subject <span className="text-accent">*</span>
+                        <label htmlFor="name" className="block text-sm font-semibold text-text-light mb-2">
+                          Name <span className="text-accent">*</span>
                         </label>
                         <input
                           type="text"
-                          id="subject"
-                          name="subject"
-                          value={formData.subject}
+                          id="name"
+                          name="name"
+                          value={formData.name}
                           onChange={handleInputChange}
                           className={`w-full px-4 py-3 bg-background-dark border ${
-                            errors.subject ? 'border-red-500' : 'border-border'
+                            errors.name ? 'border-red-500' : 'border-border'
                           } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
-                          placeholder="Brief summary of your inquiry"
+                          placeholder="Your full name"
                         />
-                        {errors.subject && (
-                          <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                        {errors.name && (
+                          <p className="mt-1 text-sm text-red-500">{errors.name}</p>
                         )}
                       </div>
-
-                      {/* Message */}
-                      <div className="flex-grow flex flex-col">
-                        <label htmlFor="message" className="block text-sm font-semibold text-text-light mb-2">
-                          Message <span className="text-accent">*</span>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-semibold text-text-light mb-2">
+                          Email <span className="text-accent">*</span>
                         </label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          value={formData.message}
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
                           onChange={handleInputChange}
-                          className={`w-full flex-grow px-4 py-3 bg-background-dark border ${
-                            errors.message ? 'border-red-500' : 'border-border'
-                          } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none min-h-[200px]`}
-                          placeholder="Tell us more about your inquiry..."
+                          className={`w-full px-4 py-3 bg-background-dark border ${
+                            errors.email ? 'border-red-500' : 'border-border'
+                          } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
+                          placeholder="your@email.com"
                         />
-                        {errors.message && (
-                          <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                        {errors.email && (
+                          <p className="mt-1 text-sm text-red-500">{errors.email}</p>
                         )}
+                      </div>
+                    </div>
+
+                    {/* Company and Phone Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-semibold text-text-light mb-2">
+                          Company / Organization
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-background-dark border border-border rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                          placeholder="Your company name"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-semibold text-text-light mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-background-dark border border-border rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                          placeholder="+1 (555) 123-4567"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Category Dropdown */}
+                    <div>
+                      <label htmlFor="category" className="block text-sm font-semibold text-text-light mb-2">
+                        Category <span className="text-accent">*</span>
+                      </label>
+                      <select
+                        id="category"
+                        name="category"
+                        value={formData.category}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 bg-background-dark border ${
+                          errors.category ? 'border-red-500' : 'border-border'
+                        } rounded-xl text-text-light focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none cursor-pointer`}
+                        style={{
+                          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                          backgroundRepeat: 'no-repeat',
+                          backgroundPosition: 'right 1rem center',
+                          backgroundSize: '1.5rem',
+                        }}
+                      >
+                        <option value="" className="bg-background-dark">Select a category...</option>
+                        {categories.map((cat) => (
+                          <option key={cat.id} value={cat.id} className="bg-background-dark">
+                            {cat.label}
+                          </option>
+                        ))}
+                      </select>
+                      {errors.category && (
+                        <p className="mt-1 text-sm text-red-500">{errors.category}</p>
+                      )}
+                      {formData.category && (
+                        <p className="mt-2 text-sm text-muted">
+                          {categories.find((cat) => cat.id === formData.category)?.description}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Subject */}
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-semibold text-text-light mb-2">
+                        Subject <span className="text-accent">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-3 bg-background-dark border ${
+                          errors.subject ? 'border-red-500' : 'border-border'
+                        } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
+                        placeholder="Brief summary of your inquiry"
+                      />
+                      {errors.subject && (
+                        <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                      )}
+                    </div>
+
+                    {/* Message */}
+                      <div className="flex-grow flex flex-col">
+                      <label htmlFor="message" className="block text-sm font-semibold text-text-light mb-2">
+                        Message <span className="text-accent">*</span>
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                          className={`w-full flex-grow px-4 py-3 bg-background-dark border ${
+                          errors.message ? 'border-red-500' : 'border-border'
+                          } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none min-h-[200px]`}
+                        placeholder="Tell us more about your inquiry..."
+                      />
+                      {errors.message && (
+                        <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                      )}
                       </div>
                     </div>
 
                     {/* Error Message and Submit Button Container - pushed to bottom */}
                     <div className="mt-auto pt-6">
-                      {submitStatus === 'error' && (
+                    {submitStatus === 'error' && (
                         <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6">
-                          <p className="text-red-400 text-sm">
-                            {errorMessage || 'Something went wrong. Please try again.'}
-                          </p>
-                        </div>
-                      )}
+                        <p className="text-red-400 text-sm">
+                          {errorMessage || 'Something went wrong. Please try again.'}
+                        </p>
+                      </div>
+                    )}
 
-                      {/* Submit Button */}
-                      <motion.button
-                        type="submit"
-                        disabled={isSubmitting}
-                        whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                        whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                        className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all ${
-                          isSubmitting
-                            ? 'bg-primary/50 cursor-not-allowed'
-                            : 'bg-primary hover:bg-primary/90'
-                        } text-white`}
-                      >
-                        {isSubmitting ? (
-                          <span className="flex items-center justify-center gap-2">
-                            <svg
-                              className="animate-spin h-5 w-5"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
-                              <circle
-                                className="opacity-25"
-                                cx="12"
-                                cy="12"
-                                r="10"
-                                stroke="currentColor"
-                                strokeWidth="4"
-                              />
-                              <path
-                                className="opacity-75"
-                                fill="currentColor"
-                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                              />
-                            </svg>
-                            Sending...
-                          </span>
-                        ) : (
-                          'Send Message'
-                        )}
-                      </motion.button>
+                    {/* Submit Button */}
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting}
+                      whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                      whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                      className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all ${
+                        isSubmitting
+                          ? 'bg-primary/50 cursor-not-allowed'
+                          : 'bg-primary hover:bg-primary/90'
+                      } text-white`}
+                    >
+                      {isSubmitting ? (
+                        <span className="flex items-center justify-center gap-2">
+                          <svg
+                            className="animate-spin h-5 w-5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            />
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        'Send Message'
+                      )}
+                    </motion.button>
                     </div>
                   </form>
                 )}

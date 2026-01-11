@@ -114,10 +114,10 @@ export default function Drones() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 0.1}>
+              <AnimatedSection key={feature.title} delay={index * 0.1} className="h-full">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-card-dark border border-border rounded-xl p-6 text-center"
+                  className="bg-card-dark border border-border rounded-xl p-6 text-center h-full"
                 >
                   <h3 className="text-lg font-bold text-text-light mb-2">
                     {feature.title}

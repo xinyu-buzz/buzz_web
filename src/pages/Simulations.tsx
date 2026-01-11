@@ -178,7 +178,7 @@ export default function Simulations() {
         {/* Features Grid */}
         <AnimatedSection className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            Serious Tech. Serious Fun.
+            Serious Tech. Unmatched Fun.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
