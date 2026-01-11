@@ -30,7 +30,7 @@ async function sendEmailWithResend(
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Buzz Newsletter <noreply@buzzbuzzin.com>',
+        from: 'Buzz Newsletter <noreply@updates.buzzbuzzin.com>',
         to: [to],
         subject: subject,
         html: htmlContent,
@@ -91,41 +91,6 @@ function generateWelcomeEmailHtml(email: string): string {
   `;
 }
 
-function generateNotificationEmailHtml(email: string): string {
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Newsletter Subscription</title>
-</head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 30px; border-radius: 12px 12px 0 0;">
-    <h1 style="color: white; margin: 0; font-size: 24px;">New Newsletter Subscription</h1>
-  </div>
-  
-  <div style="background: #f9fafb; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-    <p style="color: #1f2937; font-size: 16px; margin-top: 0;">
-      A new subscriber has joined the Buzz newsletter:
-    </p>
-    
-    <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 20px 0;">
-      <p style="color: #1f2937; margin: 0; font-size: 18px; font-weight: 500;">
-        <a href="mailto:${email}" style="color: #f59e0b; text-decoration: none;">${email}</a>
-      </p>
-    </div>
-  </div>
-  
-  <div style="background: #1f2937; padding: 20px; border-radius: 0 0 12px 12px; text-align: center;">
-    <p style="color: #9ca3af; margin: 0; font-size: 14px;">
-      This notification was sent from the Buzz newsletter subscription system.
-    </p>
-  </div>
-</body>
-</html>
-  `;
-}
 
 serve(async (req) => {
   // Handle CORS preflight requests
@@ -221,14 +186,6 @@ serve(async (req) => {
       welcomeEmailHtml
     );
 
-    // Send notification email to admin (optional)
-    const adminEmail = Deno.env.get('ADMIN_EMAIL') || 'hello@buzzbuzzin.com';
-    const notificationEmailHtml = generateNotificationEmailHtml(data.email);
-    await sendEmailWithResend(
-      adminEmail,
-      'New Newsletter Subscription',
-      notificationEmailHtml
-    );
 
     // Update subscription status based on email result
     if (subscription) {
