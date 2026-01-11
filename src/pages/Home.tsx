@@ -46,7 +46,7 @@ export default function Home() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10"
+          className="absolute bottom-10 inset-x-0 z-10 flex justify-center"
         >
           <div className="flex flex-col items-center text-white/80">
             <span className="text-sm mb-2">Scroll to explore</span>
