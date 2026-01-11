@@ -101,7 +101,7 @@ export default function Hero() {
             className="mt-16 max-w-5xl mx-auto"
           >
             <p className="text-sm text-muted mb-6 uppercase tracking-wider">Powering Industries</p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 justify-items-center">
               {[
                 { icon: '🚗', label: 'Automotive' },
                 { icon: '🏠', label: 'Real Estate' },
@@ -120,7 +120,7 @@ export default function Hero() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 1 + index * 0.05 }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="flex items-center gap-2 px-4 py-2 bg-card-dark/50 border border-border rounded-full text-sm"
+                  className="flex items-center justify-center gap-2 px-4 py-2 bg-card-dark/50 border border-border rounded-full text-sm w-full"
                 >
                   <span className="text-lg">{industry.icon}</span>
                   <span className="text-muted">{industry.label}</span>
