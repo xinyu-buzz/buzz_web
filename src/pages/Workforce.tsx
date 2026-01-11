@@ -30,7 +30,7 @@ export default function Workforce() {
         </svg>
       ),
       title: 'Beacon Community',
-      description: 'Like neighbors with water when your BBQ catches fire. Work gigs or real emergencies—this community shows up.',
+      description: 'Like neighbors showing up with water when your BBQ catches fire, or rallying for serious matters that risk your community, Buzz is a pilot force that’s there when it counts. ',
     },
     {
       icon: (

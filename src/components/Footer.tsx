@@ -39,7 +39,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-muted text-sm leading-relaxed">
-              Training. Manufacturing. Everything a drone pilot needs to fly. That's the Buzz.
+              Workforce. Training. Manufacturing. Everything a drone pilot needs to dominate the skies. That’s the Buzz!
             </p>
           </div>
 
@@ -95,15 +95,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6">
-              <h4 className="text-text-light font-semibold mb-2 text-sm">Connect</h4>
-              <a
-                href="mailto:hello@buzzbuzzin.com"
-                className="text-muted hover:text-accent transition-colors text-sm"
-              >
-                hello@buzzbuzzin.com
-              </a>
-            </div>
           </div>
         </div>
 

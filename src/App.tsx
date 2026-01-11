@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Workforce from './pages/Workforce';
 import Academy from './pages/Academy';
@@ -16,6 +17,7 @@ import Confirmation from './pages/Confirmation';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-background-dark">
         <Navbar />
         <main className="flex-grow">
