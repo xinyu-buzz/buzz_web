@@ -87,7 +87,7 @@ export default function EcosystemSection() {
             Complete Ecosystem
           </motion.h2>
           <p className="text-xl text-muted max-w-3xl mx-auto">
-            Six products. One mission. We built the tools so you can focus on flying.
+            Everything you need. One platform, zero gaps.
           </p>
         </AnimatedSection>
 
