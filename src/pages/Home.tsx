@@ -78,7 +78,8 @@ export default function Home() {
               Engineered First. Designed to Stand Out.
             </h2>
             <p className="text-xl text-muted max-w-3xl mx-auto">
-              Fleet companies manage drones. We built the platform that changes everything.<br />
+              Fleet companies manage drones.<br />
+              We built the platform that changes everything.<br />
               First to market. Real results. This is how the industry evolves.
             </p>
           </div>
