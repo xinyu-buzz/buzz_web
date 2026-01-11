@@ -500,7 +500,7 @@ export default function Contact() {
               {/* Department Info */}
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-2xl p-6">
                 <h3 className="text-lg font-bold text-text-light mb-4">
-                  Our Departments
+                  Inquiries Made Easy
                 </h3>
                 <div className="space-y-3">
                   {categories.map((cat) => (

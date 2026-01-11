@@ -39,7 +39,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-muted text-sm leading-relaxed">
-              Workforce. Training. Manufacturing. Everything a drone pilot needs to dominate the skies. That’s the Buzz!
+              Everything a drone pilot needs to dominate the skies. That's Buzz!
             </p>
           </div>
 
