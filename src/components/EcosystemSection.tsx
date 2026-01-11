@@ -6,7 +6,7 @@ export default function EcosystemSection() {
   const products = [
     {
       title: 'Workforce',
-      description: 'Powerful iOS app connecting pilots and customers, delivering high-quality results, and tracking compliance in real-time.',
+      description: 'One tap. The right pilot shows up. Verified pros, zero hassle, instant results. That\'s the Buzz.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -17,7 +17,7 @@ export default function EcosystemSection() {
     },
     {
       title: 'Academy',
-      description: 'Comprehensive online training platform with courses for drone pilots of all skill levels and certifications.',
+      description: 'From rookie to captain. World-class training that actually sticks. Get certified, get flying, get paid.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -27,19 +27,20 @@ export default function EcosystemSection() {
       comingSoon: false,
     },
     {
-      title: 'Portal',
-      description: 'Advanced management portal for bookings, client management, pilot coordination, and comprehensive reporting.',
+      title: 'Beacon',
+      description: 'When disaster strikes, pilots answer. Fire, flood, search and rescue—nearby heroes deploy in seconds, not hours.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      href: '/portal',
+      href: '/workforce',
       comingSoon: false,
     },
     {
       title: 'Drone Manufacturing',
-      description: 'Custom-built professional drones designed for specific use cases with cutting-edge technology and reliability.',
+      description: 'Built for the job, not the shelf. Professional-grade drones designed to fly harder, longer, smarter.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -51,7 +52,7 @@ export default function EcosystemSection() {
     },
     {
       title: 'Flight Simulations',
-      description: 'Immersive flight simulation games and training scenarios to practice drone piloting in a risk-free environment.',
+      description: 'Crash without consequences. Master complex maneuvers in stunning virtual environments before you fly for real.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
@@ -64,7 +65,7 @@ export default function EcosystemSection() {
     },
     {
       title: 'Drone Software',
-      description: 'Advanced software solutions for autonomous flight, data processing, and AI-powered drone intelligence.',
+      description: 'Fly smarter, not harder. AI-powered autonomy, real-time data, and tools that make the impossible routine.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
