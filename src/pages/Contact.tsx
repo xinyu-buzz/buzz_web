@@ -199,15 +199,15 @@ export default function Contact() {
     },
     {
       question: 'What FAA requirements do I need to meet?',
-      answer: 'You must hold a valid Part 107 Remote Pilot Certificate issued by the FAA. The app verifies your certification status and ensures all pilots meet current FAA regulations before they can accept jobs.',
+      answer: 'You must hold a valid Part 107 Remote Pilot Certificate issued by the FAA. The app verifies your certification status and ensures all pilots meet current FAA regulations before they can accept assignments.',
     },
     {
-      question: 'How do I complete my flight review in the app?',
-      answer: 'The app integrates with FAA systems to track your flight review status. When your flight review is due, you\'ll receive notifications and can schedule your review through the app. Completed reviews are automatically verified and updated in your profile.',
+      question: 'How does the app track my recurrent training?',
+      answer: 'The app is smart about keeping you compliant. It tracks your certifications and sends you notifications when your recurrent training is coming due. No more missed deadlines—Buzz keeps you on top of it so you can stay flight-ready.',
     },
     {
       question: 'How do I join the Beacon Community?',
-      answer: 'The Beacon Community is automatically available to all verified pilots on the Buzz Workforce platform. Once you\'re verified and active, you\'ll have access to community features, including real-time notifications for nearby opportunities and community support resources.',
+      answer: 'The Beacon Community is automatically available to all verified pilots on the Buzz Workforce platform. Once you\'re verified with Basic Firefighting and CPR, you\'ll have access to community features, including real-time notifications for nearby opportunities and community support resources.',
     },
   ];
 
