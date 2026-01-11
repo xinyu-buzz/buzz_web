@@ -207,7 +207,7 @@ export default function Contact() {
     },
     {
       question: 'How do I join the Beacon Community?',
-      answer: 'The Beacon Community is automatically available to all verified pilots on the Buzz Workforce platform. Once you\'re verified with Basic Firefighting and CPR, you\'ll have access to community features, including real-time notifications for nearby opportunities and community support resources.',
+      answer: 'Beacon is our emergency response network. When disaster strikes—fires, floods, emergencies—your community needs pilots who can deliver life-saving medical supplies, food, and blankets. Complete Basic Firefighting and CPR training through Buzz Academy, and you\'ll be ready to answer the call when your neighbors need you most.',
     },
   ];
 
