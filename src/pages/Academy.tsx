@@ -9,21 +9,21 @@ export default function Academy() {
       level: 'Advanced',
       duration: 'In-Person & Online',
       students: '850+ students',
-      description: 'Go pro. ROC-A certification with hands-on flight reviews. The credential that opens doors.',
+      description: 'Go pro. Get ROC-A. The credential that certifies you to communicate on the radio with ATC.',
     },
     {
       title: 'In-Person Flight Review',
       level: 'All Levels',
       duration: 'Scheduled Sessions',
       students: '420+ students',
-      description: 'Real instructors. Real aircraft. Real skills. Get hands-on training that actually sticks.',
+      description: 'Show us what you\'ve got. Fly a real drone, prove your skills, earn your spot.',
     },
     {
       title: 'Basic Firefighting Training',
       level: 'Professional Development',
       duration: '8 hours',
       students: '180+ students',
-      description: 'When the call comes, you\'re ready. Essential firefighting skills for emergency response.',
+      description: 'When the call comes, you\'re ready. Essential firefighting skills for every day flying.',
     },
     {
       title: 'CPR & First Aid',
@@ -108,7 +108,7 @@ export default function Academy() {
         {/* Popular Courses */}
         <AnimatedSection className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            Popular Courses
+            What We Offer
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {courses.map((course, index) => (
@@ -170,7 +170,7 @@ export default function Academy() {
                   </svg>
                 ),
                 title: 'In-Person Reviews',
-                description: 'Face-to-face with the pros. Hands-on flight training that delivers.',
+                description: 'Face-to-face with the pros. Hands-on flight review that delivers.',
               },
               {
                 icon: (
