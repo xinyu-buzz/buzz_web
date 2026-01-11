@@ -15,7 +15,7 @@ export default function Drones() {
     },
     {
       title: 'Extended Flight Time',
-      description: 'Optimized battery systems for longer operational duration.',
+      description: 'Optimized battery systems for longer flight duration.',
     },
     {
       title: 'Ruggedized Build',
@@ -27,7 +27,7 @@ export default function Drones() {
     },
     {
       title: 'AI Integration',
-      description: 'Built-in AI capabilities for autonomous operations.',
+      description: 'Built-in AI capabilities for autonomous flight.',
     },
   ];
 
@@ -140,7 +140,7 @@ export default function Drones() {
             {[
               { title: 'Agriculture', icon: '🌾', desc: 'Precision crop monitoring and spraying' },
               { title: 'Construction', icon: '🏗️', desc: 'Site surveys and progress tracking' },
-              { title: 'Emergency Services', icon: '🚨', desc: 'Search and rescue operations' },
+              { title: 'Emergency Services', icon: '🚨', desc: 'Search and rescue missions' },
               { title: 'Energy', icon: '⚡', desc: 'Infrastructure inspection and maintenance' },
               { title: 'Media Production', icon: '🎬', desc: 'Cinematic aerial photography and video' },
               { title: 'Security', icon: '🛡️', desc: 'Perimeter monitoring and surveillance' },

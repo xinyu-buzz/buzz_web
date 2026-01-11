@@ -9,7 +9,7 @@ export default function About() {
     },
     {
       title: 'Safety',
-      description: 'Prioritizing safety in every aspect of drone operations and training.',
+      description: 'Prioritizing safety in every aspect of drone flights and training.',
     },
     {
       title: 'Excellence',
@@ -25,7 +25,7 @@ export default function About() {
     { year: '2020', event: 'Implemented a drone workforce under production house' },
     { year: '2021', event: 'Launched Buzz Academy with first pilot training courses' },
     { year: '2022', event: 'Buzz became a standalone company' },
-    { year: '2023', event: 'Launched Buzz Portal for enterprise-scale operations' },
+    { year: '2023', event: 'Launched Buzz Portal for individual and enterprise clients' },
     { year: '2024', event: 'Growing rapidly with pilot training programs' },
     { year: '2025', event: 'Buzz App launched in App Store' },
     { year: '2026', event: 'Expanding into drone manufacturing, simulations, and software' },
@@ -41,7 +41,7 @@ export default function About() {
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto">
             We're building the complete ecosystem for the drone industry — from training 
-            and operations to manufacturing and software.
+            and workforce to manufacturing and software.
           </p>
         </AnimatedSection>
 
@@ -54,7 +54,7 @@ export default function About() {
             <p className="text-xl text-text-light leading-relaxed max-w-4xl mx-auto">
               To empower individuals and organizations with the tools, training, and technology 
               needed to succeed in the rapidly evolving drone industry. We believe in making 
-              professional drone operations accessible, safe, and efficient for everyone.
+              drones accessible, safe, and efficient for everyone.
             </p>
           </div>
         </AnimatedSection>
@@ -69,13 +69,13 @@ export default function About() {
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
                   Buzz started with a simple observation: the drone industry was fragmented. 
-                  Pilots needed multiple tools for training, operations, and compliance. 
-                  Operators struggled with inefficient workflows. There had to be a better way.
+                  Pilots needed multiple tools for training, accepting gigs, and compliance. 
+                  They struggled with inefficient workflows. There had to be a better way.
                 </p>
                 <p>
                   We set out to build a complete ecosystem that brings everything together. 
                   From our Academy platform for comprehensive pilot training, to our 
-                  Workforce app that manages complex operations, to our Portal that serves 
+                  Workforce app that connects professional drone pilots, to our Portal that serves 
                   as the central hub for enterprises.
                 </p>
                 <p>

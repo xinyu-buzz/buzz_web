@@ -78,7 +78,7 @@ export default function Home() {
               Technology-Driven Innovation
             </h2>
             <p className="text-xl text-muted max-w-3xl mx-auto">
-              We're not managing operations—we're revolutionizing how the drone industry works. 
+              We're not a fleet company—we're the platform revolutionizing how the drone industry works. 
               First-to-market technology empowering pilots and transforming the workforce.
             </p>
           </div>

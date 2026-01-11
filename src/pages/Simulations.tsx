@@ -44,7 +44,7 @@ export default function Simulations() {
     },
     {
       title: 'Mission Mode',
-      description: 'Complete realistic operational scenarios',
+      description: 'Complete realistic flight scenarios',
       difficulty: 'Advanced',
     },
     {

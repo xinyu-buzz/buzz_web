@@ -30,7 +30,7 @@ export default function Academy() {
       level: 'All Levels',
       duration: '4 hours',
       students: '340+ students',
-      description: 'Critical emergency response training for field operations and safety compliance.',
+      description: 'Critical emergency response training for field work and safety compliance.',
     },
     {
       title: 'UAS Pilot Certification',

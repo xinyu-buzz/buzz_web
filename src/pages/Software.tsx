@@ -21,7 +21,7 @@ export default function Software() {
         </svg>
       ),
       title: 'Autonomous Flight',
-      description: 'AI-powered autonomous operations with obstacle avoidance and smart navigation.',
+      description: 'AI-powered autonomous flight with obstacle avoidance and smart navigation.',
     },
     {
       icon: (
@@ -48,7 +48,7 @@ export default function Software() {
         </svg>
       ),
       title: 'Analytics Dashboard',
-      description: 'Real-time insights and comprehensive analytics for your operations.',
+      description: 'Real-time insights and comprehensive analytics for your drones.',
     },
     {
       icon: (
@@ -57,7 +57,7 @@ export default function Software() {
         </svg>
       ),
       title: 'API Integration',
-      description: 'Powerful APIs to integrate drone operations into your existing workflows.',
+      description: 'Powerful APIs to integrate drone services into your existing workflows.',
     },
   ];
 
@@ -90,7 +90,7 @@ export default function Software() {
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
             Advanced software solutions for autonomous flight, data processing, and AI-powered 
-            drone operations. Build the future of aerial technology.
+            drone intelligence. Build the future of aerial technology.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -6,7 +6,7 @@ export default function EcosystemSection() {
   const products = [
     {
       title: 'Workforce',
-      description: 'Powerful iOS app for managing drone operations, pilot scheduling, and compliance tracking in real-time.',
+      description: 'Powerful iOS app connecting pilots and customers, delivering high-quality results, and tracking compliance in real-time.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -28,7 +28,7 @@ export default function EcosystemSection() {
     },
     {
       title: 'Portal',
-      description: 'Advanced management portal for drone operations, bookings, client management, and comprehensive reporting.',
+      description: 'Advanced management portal for bookings, client management, pilot coordination, and comprehensive reporting.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
@@ -64,7 +64,7 @@ export default function EcosystemSection() {
     },
     {
       title: 'Drone Software',
-      description: 'Advanced software solutions for autonomous flight, data processing, and AI-powered drone operations.',
+      description: 'Advanced software solutions for autonomous flight, data processing, and AI-powered drone intelligence.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -86,7 +86,7 @@ export default function EcosystemSection() {
             Complete Ecosystem
           </motion.h2>
           <p className="text-xl text-muted max-w-3xl mx-auto">
-            Everything you need for drone operations, from training to manufacturing, 
+            Everything you need for the drone industry, from training to manufacturing, 
             all in one integrated platform.
           </p>
         </AnimatedSection>

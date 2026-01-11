@@ -63,7 +63,7 @@ export default function Hero() {
             Elevate Your
             <br />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
-              Drone Operations
+              Drone Experience
             </span>
           </motion.h1>
 
