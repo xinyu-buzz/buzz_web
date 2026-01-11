@@ -748,7 +748,7 @@ export default function Contact() {
               <h3 className="text-lg font-bold text-text-light mb-2">
                 Coming Soon
               </h3>
-              <p className="text-muted text-xs mb-3">New locations opening soon:</p>
+              <p className="text-muted text-xs mb-3">New offices opening soon:</p>
               <div className="space-y-2">
                 <div className="flex items-start gap-2 text-sm">
                   <svg className="w-4 h-4 flex-shrink-0 mt-0.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -75,12 +75,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-text-light mb-4">
-            Built First. Built Different.
+              Engineered First. Designed to Stand Out.
             </h2>
             <p className="text-xl text-muted max-w-3xl mx-auto">
-              Fleet companies manage drones, but we're here to shake things up!<br />
-              Our groundbreaking platform is first to market, delivering jaw-dropping&nbsp;results.<br />
-              This is how the drone industry truly evolves!
+              Fleet companies manage drones. We built the platform that changes everything.<br />
+              First to market. Real results. This is how the industry evolves.
             </p>
           </div>
 

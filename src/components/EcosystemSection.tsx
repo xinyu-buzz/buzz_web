@@ -87,8 +87,7 @@ export default function EcosystemSection() {
             Complete Ecosystem
           </motion.h2>
           <p className="text-xl text-muted max-w-3xl mx-auto">
-            Everything you need for the drone industry, from training to manufacturing, 
-            all in one integrated platform.
+            Six products. One mission. We built the tools so you can focus on flying.
           </p>
         </AnimatedSection>
 
