@@ -64,10 +64,9 @@ export default function Navbar() {
           >
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-muted hover:text-text-light hover:bg-card-dark transition-colors"
+              className="p-2 rounded-lg text-muted hover:text-text-light hover:bg-card-dark transition-colors"
               aria-label="Toggle menu"
             >
-              <span className="text-sm font-medium hidden sm:block">Menu</span>
               <svg
                 className="w-6 h-6"
                 fill="none"
