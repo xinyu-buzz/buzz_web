@@ -12,7 +12,7 @@ export default function Software() {
         </svg>
       ),
       title: 'Mission Planning',
-      description: 'Advanced route planning with automatic waypoint generation and optimization.',
+      description: 'Plot it. Optimize it. Launch it. Smart routes, auto-waypoints, zero guesswork.',
     },
     {
       icon: (
@@ -21,7 +21,7 @@ export default function Software() {
         </svg>
       ),
       title: 'Autonomous Flight',
-      description: 'AI-powered autonomous flight with obstacle avoidance and smart navigation.',
+      description: 'Set it and forget it. AI handles obstacles, navigation, and the hard stuff.',
     },
     {
       icon: (
@@ -30,7 +30,7 @@ export default function Software() {
         </svg>
       ),
       title: 'Data Processing',
-      description: 'Automated processing of aerial imagery and sensor data with AI analysis.',
+      description: 'Raw data in. Actionable insights out. AI does the heavy lifting.',
     },
     {
       icon: (
@@ -39,7 +39,7 @@ export default function Software() {
         </svg>
       ),
       title: '3D Mapping',
-      description: 'Create detailed 3D models and orthomosaic maps from aerial captures.',
+      description: 'Turn flights into stunning 3D models and precision maps. See everything.',
     },
     {
       icon: (
@@ -48,7 +48,7 @@ export default function Software() {
         </svg>
       ),
       title: 'Analytics Dashboard',
-      description: 'Real-time insights and comprehensive analytics for your drones.',
+      description: 'Real-time data. Deep insights. Know exactly what your fleet is doing.',
     },
     {
       icon: (
@@ -57,15 +57,15 @@ export default function Software() {
         </svg>
       ),
       title: 'API Integration',
-      description: 'Powerful APIs to integrate drone services into your existing workflows.',
+      description: 'Plug into your stack. Powerful APIs that play nice with your workflow.',
     },
   ];
 
   const sdkFeatures = [
-    { title: 'Python SDK', description: 'Full-featured library for rapid development' },
-    { title: 'JavaScript SDK', description: 'Web-based applications and integrations' },
-    { title: 'REST API', description: 'Standard HTTP API for any platform' },
-    { title: 'WebSocket API', description: 'Real-time data streaming and control' },
+    { title: 'Python SDK', description: 'Ship fast. Full-featured library for devs who move.' },
+    { title: 'JavaScript SDK', description: 'Web-native. Build drone apps for the browser.' },
+    { title: 'REST API', description: 'Universal access. Works with anything, anywhere.' },
+    { title: 'WebSocket API', description: 'Live data. Real-time control. Zero lag.' },
   ];
 
   return (
@@ -89,8 +89,8 @@ export default function Software() {
             Drone Software Suite
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-            Advanced software solutions for autonomous flight, data processing, and AI-powered 
-            drone intelligence. Build the future of aerial technology.
+            The brains behind the flight. Autonomous missions. AI-powered insights. 
+            Software that makes drones smarter. Build the future with us.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -142,10 +142,10 @@ export default function Software() {
         {/* Features Grid */}
         <AnimatedSection className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-4">
-            Comprehensive Features
+            All the Tools. Zero Compromise.
           </h2>
           <p className="text-muted text-center mb-12 max-w-2xl mx-auto">
-            Everything you need to build, deploy, and scale drone applications.
+            Build it. Deploy it. Scale it. Everything you need in one powerful suite.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -172,10 +172,10 @@ export default function Software() {
         {/* SDK Options */}
         <AnimatedSection className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-3xl p-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-4">
-            Developer-First Approach
+            Built for Builders
           </h2>
           <p className="text-muted text-center mb-12 max-w-2xl mx-auto">
-            Multiple SDKs and APIs to fit your tech stack and development workflow.
+            Your stack. Your way. SDKs and APIs that fit how you actually work.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {sdkFeatures.map((sdk, index) => (

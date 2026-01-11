@@ -9,42 +9,42 @@ export default function Academy() {
       level: 'Advanced',
       duration: 'In-Person & Online',
       students: '850+ students',
-      description: 'Remotely Piloted Aircraft - Advanced certification with comprehensive in-person flight reviews.',
+      description: 'Go pro. ROC-A certification with hands-on flight reviews. The credential that opens doors.',
     },
     {
       title: 'In-Person Flight Review',
       level: 'All Levels',
       duration: 'Scheduled Sessions',
       students: '420+ students',
-      description: 'Hands-on flight training and assessment with experienced instructors to elevate your skills.',
+      description: 'Real instructors. Real aircraft. Real skills. Get hands-on training that actually sticks.',
     },
     {
       title: 'Basic Firefighting Training',
       level: 'Professional Development',
       duration: '8 hours',
       students: '180+ students',
-      description: 'Essential firefighting skills for drone pilots working in emergency response scenarios.',
+      description: 'When the call comes, you\'re ready. Essential firefighting skills for emergency response.',
     },
     {
       title: 'CPR & First Aid',
       level: 'All Levels',
       duration: '4 hours',
       students: '340+ students',
-      description: 'Critical emergency response training for field work and safety compliance.',
+      description: 'Save lives. Critical emergency response training that every pilot should have.',
     },
     {
       title: 'UAS Pilot Certification',
       level: 'Beginner to Advanced',
       duration: '20 hours',
       students: '1,200+ students',
-      description: 'Complete online certification program for aspiring commercial drone pilots.',
+      description: 'Zero to certified. Complete online program to launch your commercial drone career.',
     },
     {
       title: 'Advanced Flight Techniques',
       level: 'Advanced',
       duration: '16 hours',
       students: '290+ students',
-      description: 'Master complex maneuvers and challenging flight scenarios with expert instruction.',
+      description: 'Push your limits. Master complex maneuvers and challenging scenarios with the best.',
     },
   ];
 
@@ -67,10 +67,8 @@ export default function Academy() {
             Buzz Academy
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-            Comprehensive online training platform for drone pilots, featuring in-person flight reviews 
-            and ROC-A certification to elevate the drone industry. We also partner with leading organizations 
-            to offer essential training including basic Firefighting, CPR, and other critical skills. 
-            From beginner to expert, we provide the complete education you need.
+            This is where pilots level up. Online courses. In-person flight reviews. ROC-A certification. 
+            Plus firefighting, CPR, and the skills that set you apart. Beginner or pro—we've got your next step.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -151,7 +149,7 @@ export default function Academy() {
         {/* Features */}
         <AnimatedSection className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-3xl p-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-text-light text-center mb-8">
-            Comprehensive Training Solutions
+            Everything You Need to Fly Pro
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {[
@@ -163,7 +161,7 @@ export default function Academy() {
                   </svg>
                 ),
                 title: 'Online Platform',
-                description: 'HD video lessons and interactive content accessible anytime',
+                description: 'Learn anywhere. HD videos and interactive content on your schedule.',
               },
               {
                 icon: (
@@ -172,7 +170,7 @@ export default function Academy() {
                   </svg>
                 ),
                 title: 'In-Person Reviews',
-                description: 'Hands-on flight reviews with expert instructors',
+                description: 'Face-to-face with the pros. Hands-on flight training that delivers.',
               },
               {
                 icon: (
@@ -181,7 +179,7 @@ export default function Academy() {
                   </svg>
                 ),
                 title: 'ROC-A Certification',
-                description: 'Advanced certification programs for professional pilots',
+                description: 'The gold standard. Advanced certs for serious pilots.',
               },
               {
                 icon: (
@@ -190,7 +188,7 @@ export default function Academy() {
                   </svg>
                 ),
                 title: 'Emergency Training',
-                description: 'Firefighting, CPR, and other essential safety courses',
+                description: 'Be the pilot who\'s ready for anything. Firefighting, CPR, and more.',
               },
             ].map((feature) => (
               <div key={feature.title} className="text-center">

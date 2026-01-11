@@ -7,49 +7,49 @@ export default function Simulations() {
   const features = [
     {
       title: 'Realistic Physics',
-      description: 'Accurate flight dynamics and environmental conditions for true-to-life training.',
+      description: 'Feels like the real thing. Flight dynamics so accurate, you\'ll forget it\'s a sim.',
     },
     {
       title: 'Multiple Scenarios',
-      description: 'Practice everything from basic maneuvers to complex emergency situations.',
+      description: 'Basic moves to emergency chaos. Practice it all before it counts.',
     },
     {
       title: 'Weather Simulation',
-      description: 'Experience various weather conditions including wind, rain, and fog.',
+      description: 'Wind, rain, fog—master the elements before you face them.',
     },
     {
       title: 'Multiplayer Mode',
-      description: 'Train with other pilots and participate in team missions.',
+      description: 'Team up. Compete. Learn from the best pilots out there.',
     },
     {
       title: 'Performance Analytics',
-      description: 'Track your progress and identify areas for improvement.',
+      description: 'Know your weak spots. Track progress. Get better, faster.',
     },
     {
       title: 'VR Support',
-      description: 'Immersive virtual reality experience for enhanced training.',
+      description: 'Full immersion. Strap in and experience flight like never before.',
     },
   ];
 
   const gamesModes = [
     {
       title: 'Training Mode',
-      description: 'Learn the basics and master fundamental skills',
+      description: 'Start here. Master the fundamentals before you level up.',
       difficulty: 'Beginner',
     },
     {
       title: 'Challenge Mode',
-      description: 'Test your skills in time trials and obstacle courses',
+      description: 'Time trials. Obstacle courses. Prove you\'ve got what it takes.',
       difficulty: 'Intermediate',
     },
     {
       title: 'Mission Mode',
-      description: 'Complete realistic flight scenarios',
+      description: 'Real scenarios. Real pressure. This is where pros are made.',
       difficulty: 'Advanced',
     },
     {
       title: 'Free Flight',
-      description: 'Explore open environments at your own pace',
+      description: 'No rules. No limits. Just you and the open sky.',
       difficulty: 'All Levels',
     },
   ];
@@ -76,8 +76,8 @@ export default function Simulations() {
             Flight Simulations & Games
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-            Master drone piloting in a risk-free virtual environment. Train, compete, 
-            and have fun with realistic flight simulations and engaging game modes.
+            Crash here, not out there. Train in a virtual world that feels real. 
+            Compete, level up, and have a blast while you're at it.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -146,10 +146,10 @@ export default function Simulations() {
         {/* Game Modes */}
         <AnimatedSection className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-4">
-            Multiple Game Modes
+            Pick Your Challenge
           </h2>
           <p className="text-muted text-center mb-12 max-w-2xl mx-auto">
-            From beginner training to advanced missions, there's something for every skill level.
+            Newbie or ace, we've got a mode for you. Start easy. Go hard. Dominate.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {gamesModes.map((mode, index) => (
@@ -178,7 +178,7 @@ export default function Simulations() {
         {/* Features Grid */}
         <AnimatedSection className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            Advanced Features
+            Serious Tech. Serious Fun.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -202,10 +202,10 @@ export default function Simulations() {
         {/* Platform Support */}
         <AnimatedSection className="bg-card-dark/50 rounded-3xl p-12 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-4">
-            Multi-Platform Support
+            Play Anywhere
           </h2>
           <p className="text-muted mb-8 max-w-2xl mx-auto">
-            Play on your preferred device with full cross-platform progression.
+            Your device. Your choice. Progress syncs everywhere. Jump in anytime.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             {[

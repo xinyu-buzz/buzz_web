@@ -7,27 +7,27 @@ export default function Drones() {
   const features = [
     {
       title: 'Custom Designs',
-      description: 'Tailored drone solutions for specific industry needs and use cases.',
+      description: 'Your mission. Your drone. Built exactly for what you need.',
     },
     {
       title: 'Advanced Sensors',
-      description: 'Cutting-edge sensor technology for precise data collection.',
+      description: 'See more. Know more. Next-gen sensors for precision data.',
     },
     {
       title: 'Extended Flight Time',
-      description: 'Optimized battery systems for longer flight duration.',
+      description: 'Stay up longer. Optimized power for marathon missions.',
     },
     {
       title: 'Ruggedized Build',
-      description: 'Weather-resistant construction for demanding environments.',
+      description: 'Rain, wind, dust—bring it on. Built for the real world.',
     },
     {
       title: 'Modular Payloads',
-      description: 'Interchangeable payload systems for multiple applications.',
+      description: 'Swap, adapt, conquer. One drone, endless possibilities.',
     },
     {
       title: 'AI Integration',
-      description: 'Built-in AI capabilities for autonomous flight.',
+      description: 'Smart flight. Smarter decisions. AI that works for you.',
     },
   ];
 
@@ -52,8 +52,8 @@ export default function Drones() {
             Buzz Drone Manufacturing
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-            Professional-grade drones designed and built for demanding applications. 
-            Custom solutions for every industry need.
+            We don't just sell drones—we build them. Pro-grade hardware for real missions. 
+            Custom-engineered. Battle-tested. Ready to dominate.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -107,10 +107,10 @@ export default function Drones() {
         {/* Features Grid */}
         <AnimatedSection className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-4">
-            Engineered for Excellence
+            Engineered. Tested. Proven.
           </h2>
           <p className="text-muted text-center mb-12 max-w-2xl mx-auto">
-            Our drones are designed with cutting-edge technology and built to exceed industry standards.
+            Cutting-edge tech. Industry-leading specs. Drones that don't just meet expectations—they crush them.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -134,16 +134,16 @@ export default function Drones() {
         {/* Use Cases */}
         <AnimatedSection className="bg-card-dark/50 rounded-3xl p-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            Industry Applications
+            Built for Every Mission
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: 'Agriculture', icon: '🌾', desc: 'Precision crop monitoring and spraying' },
-              { title: 'Construction', icon: '🏗️', desc: 'Site surveys and progress tracking' },
-              { title: 'Emergency Services', icon: '🚨', desc: 'Search and rescue missions' },
-              { title: 'Energy', icon: '⚡', desc: 'Infrastructure inspection and maintenance' },
-              { title: 'Media Production', icon: '🎬', desc: 'Cinematic aerial photography and video' },
-              { title: 'Security', icon: '🛡️', desc: 'Perimeter monitoring and surveillance' },
+              { title: 'Agriculture', icon: '🌾', desc: 'Precision farming. Monitor, spray, optimize.' },
+              { title: 'Construction', icon: '🏗️', desc: 'Survey faster. Track smarter. Build better.' },
+              { title: 'Emergency Services', icon: '🚨', desc: 'When lives are on the line, we deliver.' },
+              { title: 'Energy', icon: '⚡', desc: 'Inspect infrastructure without the risk.' },
+              { title: 'Media Production', icon: '🎬', desc: 'Epic shots. Cinematic quality. Every take.' },
+              { title: 'Security', icon: '🛡️', desc: 'Eyes in the sky. 24/7 peace of mind.' },
             ].map((useCase, index) => (
               <AnimatedSection key={useCase.title} delay={index * 0.1}>
                 <motion.div

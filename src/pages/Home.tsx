@@ -75,11 +75,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-text-light mb-4">
-              Technology-Driven Innovation
+              Built Different. Built First.
             </h2>
             <p className="text-xl text-muted max-w-3xl mx-auto">
-              We're not a fleet company—we're the platform revolutionizing how the drone industry works. 
-              First-to-market technology empowering pilots and transforming the workforce.
+              Fleet companies manage drones. We built the platform that's changing the game. 
+              First-to-market tech. Real results. This is how the drone industry evolves.
             </p>
           </div>
 
@@ -92,7 +92,7 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'First to Market',
-                description: 'Pioneering mobile-first workforce technology built specifically for drone pilots. Our iOS app sets the industry standard.',
+                description: 'No one else has this. Mobile-first workforce tech built for drone pilots. Our iOS app didn\'t follow the standard—it set it.',
               },
               {
                 icon: (
@@ -101,7 +101,7 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'Beacon Technology',
-                description: 'Revolutionary system connecting verified pilots with opportunities through our proprietary beacon community.',
+                description: 'When emergencies hit, seconds count. Beacon connects government agencies with nearby pilots instantly. Real impact, right when it matters.',
               },
               {
                 icon: (
@@ -109,8 +109,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                   </svg>
                 ),
-                title: 'Empowering Pilots',
-                description: 'Technology that gives pilots control—intelligent scheduling, automated compliance, and seamless coordination tools.',
+                title: 'Pilots in Control',
+                description: 'Your schedule. Your gigs. Your career. Smart tools for scheduling, compliance, and coordination—all in your hands.',
               },
             ].map((feature, index) => (
               <AnimatedSection key={feature.title} delay={index * 0.2} className="h-full">
@@ -139,11 +139,11 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-3xl p-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-4">
-              Join the Revolution
+              Ready to Fly?
             </h2>
             <p className="text-xl text-muted mb-8">
-              Experience the first-to-market workforce technology that's transforming how drone pilots work. 
-              Download our iOS app and be part of the future.
+              The future of drone work is here. First-to-market tech. A community of pros. 
+              Download the app. Join the movement. Let's go.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="primary" href="/workforce">

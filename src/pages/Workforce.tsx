@@ -20,7 +20,7 @@ export default function Workforce() {
         </svg>
       ),
       title: 'Verified Pilots Only',
-      description: 'Every pilot is certified, insured, and ready. You get pros, not problems.',
+      description: 'Every pilot is licensed under verified, insured, and ready. You get pros, not problems.',
     },
     {
       icon: (
@@ -30,7 +30,7 @@ export default function Workforce() {
         </svg>
       ),
       title: 'Beacon Community',
-      description: 'Like neighbors showing up with water when your BBQ catches fire, or rallying for serious matters that risk your community. A community that\'s there when it matters—for work and for what matters most.',
+      description: 'Like neighbors with water when your BBQ catches fire. Work gigs or real emergencies—this community shows up.',
     },
     {
       icon: (
@@ -44,11 +44,11 @@ export default function Workforce() {
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: 'Always Connected',
-      description: 'Instant notifications to nearby pilots when new bookings drop. Real-time flight status updates. Know exactly what\'s happening, when it\'s happening, so you never miss an opportunity.',
+      title: 'Safety First. Always.',
+      description: 'Built-in checklists before every flight. No shortcuts, no skipping. Fly safe or don\'t fly at all.',
     },
     {
       icon: (
@@ -82,7 +82,7 @@ export default function Workforce() {
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
             One tap. The right pilot shows up. Every time. The first-to-market app connecting 
             verified drone pilots with opportunities instantly. For pilots: accept, show up, deliver. 
-            For clients: request, relax, receive. Available now on the App Store.
+            For Customers: request, relax, receive. Available now on the App Store.
           </p>
           
           <div className="flex flex-col items-center justify-center gap-6">
@@ -152,7 +152,7 @@ export default function Workforce() {
             Why Everyone Wants In
           </h2>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-12 text-center">
-            The first app of its kind. Pilots love it. Clients can't live without it. 
+            The first app of its kind. Pilots love it. Customers can't live without it. 
             <br />
             Here's why there's a Buzz.
           </p>
@@ -162,7 +162,7 @@ export default function Workforce() {
                 title: 'For Pilots',
                 subtitle: 'Work on Your Terms',
                 points: [
-                  'See gigs near you instantly',
+                  'See assignments near you instantly',
                   'Accept what you want, when you want',
                   'Show up, fly, get paid',
                   'Build your reputation',
@@ -170,7 +170,7 @@ export default function Workforce() {
                 ],
               },
               {
-                title: 'For Clients',
+                title: 'For Customers',
                 subtitle: 'Get Results, Not Excuses',
                 points: [
                   'Request a pilot in seconds',
@@ -222,7 +222,7 @@ export default function Workforce() {
             Simple for Anyone, Powerful for Everyone
           </h2>
           <p className="text-xl text-muted max-w-2xl mx-auto mb-8 text-center">
-            Designed for pilots and customers, built for scale. One app that works perfectly 
+            Designed for pilots, built for scale. One app that works perfectly 
             whether you're booking your first flight or coordinating hundreds.
           </p>
           

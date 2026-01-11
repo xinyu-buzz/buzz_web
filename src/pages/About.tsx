@@ -5,30 +5,30 @@ export default function About() {
   const values = [
     {
       title: 'Innovation',
-      description: 'Pushing the boundaries of drone technology with cutting-edge solutions.',
+      description: 'We don\'t follow trends—we set them. Cutting-edge tech, always.',
     },
     {
       title: 'Safety',
-      description: 'Prioritizing safety in every aspect of drone flights and training.',
+      description: 'Every flight. Every pilot. Safety isn\'t optional—it\'s built in.',
     },
     {
       title: 'Excellence',
-      description: 'Delivering world-class products and services that exceed expectations.',
+      description: 'Good enough? Never heard of it. We deliver world-class, period.',
     },
     {
       title: 'Community',
-      description: 'Building a thriving ecosystem of pilots, operators, and innovators.',
+      description: 'Pilots, innovators, game-changers. We\'re building this together.',
     },
   ];
 
   const timeline = [
-    { year: '2020', event: 'Implemented a drone workforce under production house' },
-    { year: '2021', event: 'Launched Buzz Academy with first pilot training courses' },
-    { year: '2022', event: 'Buzz became a standalone company' },
-    { year: '2023', event: 'Launched Buzz Portal for individual and enterprise clients' },
-    { year: '2024', event: 'Growing rapidly with pilot training programs' },
-    { year: '2025', event: 'Buzz App launched in App Store' },
-    { year: '2026', event: 'Expanding into drone manufacturing, simulations, and software' },
+    { year: '2020', event: 'It started here. Drone workforce under a production house. The seed was planted.' },
+    { year: '2021', event: 'Buzz Academy goes live. First pilots trained. The journey begins.' },
+    { year: '2022', event: 'We went solo. Buzz becomes its own company. No looking back.' },
+    { year: '2023', event: 'Buzz Portal launches. Individual and enterprise customers, connected.' },
+    { year: '2024', event: 'Rapid growth. More pilots. More training. More momentum.' },
+    { year: '2025', event: 'Buzz App hits the App Store. Mobile-first. Industry-first.' },
+    { year: '2026', event: 'Manufacturing. Simulations. Software. The ecosystem expands.' },
   ];
 
   return (
@@ -40,8 +40,8 @@ export default function About() {
             About Buzz
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto">
-            We're building the complete ecosystem for the drone industry — from training 
-            and workforce to manufacturing and software.
+            The complete drone ecosystem. Training. Workforce. Manufacturing. Software. 
+            Everything under one roof. That's the Buzz.
           </p>
         </AnimatedSection>
 
@@ -52,9 +52,8 @@ export default function About() {
               Our Mission
             </h2>
             <p className="text-xl text-text-light leading-relaxed max-w-4xl mx-auto">
-              To empower individuals and organizations with the tools, training, and technology 
-              needed to succeed in the rapidly evolving drone industry. We believe in making 
-              drones accessible, safe, and efficient for everyone.
+              Give everyone the tools, training, and tech to win in the drone industry. 
+              Make it accessible. Make it safe. Make it efficient. That's what we're here for.
             </p>
           </div>
         </AnimatedSection>
@@ -68,20 +67,16 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  Buzz started with a simple observation: the drone industry was fragmented. 
-                  Pilots needed multiple tools for training, accepting gigs, and compliance. 
-                  They struggled with inefficient workflows. There had to be a better way.
+                  We saw a problem. The drone industry was a mess—fragmented tools, clunky workflows, 
+                  pilots juggling a dozen apps just to get things done. We knew there had to be a better way.
                 </p>
                 <p>
-                  We set out to build a complete ecosystem that brings everything together. 
-                  From our Academy platform for comprehensive pilot training, to our 
-                  Workforce app that connects professional drone pilots, to our Portal that serves 
-                  as the central hub for enterprises.
+                  So we built one. Academy for training. Workforce for gigs. A platform that connects 
+                  pilots and customers seamlessly. Everything a drone pro needs, in one place.
                 </p>
                 <p>
-                  But we didn't stop there. In 2026, we're expanding into drone manufacturing, 
-                  flight simulations, and advanced software solutions. Our goal is to be the 
-                  one-stop platform for everything drone-related.
+                  And we're just getting started. 2026 brings drone manufacturing, flight sims, and 
+                  next-gen software. One ecosystem. Infinite possibilities. Welcome to the future.
                 </p>
               </div>
             </div>
@@ -99,7 +94,7 @@ export default function About() {
         {/* Values */}
         <AnimatedSection className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            Our Values
+            What We Stand For
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
@@ -123,7 +118,7 @@ export default function About() {
         {/* Timeline */}
         <AnimatedSection className="mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            Our Journey
+            How We Got Here
           </h2>
           <div className="max-w-4xl mx-auto">
             {timeline.map((item, index) => (
@@ -151,7 +146,7 @@ export default function About() {
         {/* Stats */}
         <AnimatedSection className="bg-card-dark/50 rounded-3xl p-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            By The Numbers
+            The Numbers Speak
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[

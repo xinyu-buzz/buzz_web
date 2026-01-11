@@ -74,8 +74,8 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-xl sm:text-2xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed"
           >
-            From pilot training to drone manufacturing, Buzz provides everything you need 
-            to succeed in the drone industry.
+            Training. Manufacturing. Software. Workforce. One platform. Infinite possibilities. 
+            This is how you win in the drone industry.
           </motion.p>
 
           {/* CTA Buttons */}
