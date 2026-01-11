@@ -60,10 +60,10 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-text-light mb-6 leading-tight"
           >
-            Elevate Your
+            One Platform.
             <br />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
-              Drone Experience
+              Every Possibility.
             </span>
           </motion.h1>
 
@@ -74,7 +74,7 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-xl sm:text-2xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed"
           >
-            Training. Manufacturing. Software. Workforce. One platform. Infinite possibilities. 
+            Workforce. Training. Manufacturing. Software. And more. 
             This is how you win in the drone industry.
           </motion.p>
 
@@ -93,32 +93,40 @@ export default function Hero() {
             </Button>
           </motion.div>
 
-          {/* Stats */}
+          {/* Industries */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto"
+            className="mt-16 max-w-5xl mx-auto"
           >
-            {[
-              { value: '2,500+', label: 'Pilots Trained' },
-              { value: '15K+', label: 'Flights Logged' },
-              { value: '12', label: 'Courses Available' },
-              { value: '98%', label: 'Customer Satisfaction' },
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted">{stat.label}</div>
-              </motion.div>
-            ))}
+            <p className="text-sm text-muted mb-6 uppercase tracking-wider">Powering Industries</p>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              {[
+                { icon: '🚗', label: 'Automotive' },
+                { icon: '🏠', label: 'Real Estate' },
+                { icon: '🎬', label: 'Motion Picture' },
+                { icon: '🌾', label: 'Agriculture' },
+                { icon: '🔍', label: 'Inspection' },
+                { icon: '🚁', label: 'Search & Rescue' },
+                { icon: '📦', label: 'Logistics' },
+                { icon: '🎨', label: 'Drone Art' },
+                { icon: '🛡️', label: 'Security' },
+                { icon: '🗺️', label: 'Mapping' },
+              ].map((industry, index) => (
+                <motion.div
+                  key={industry.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1 + index * 0.05 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="flex items-center gap-2 px-4 py-2 bg-card-dark/50 border border-border rounded-full text-sm"
+                >
+                  <span className="text-lg">{industry.icon}</span>
+                  <span className="text-muted">{industry.label}</span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </motion.div>
       </div>
