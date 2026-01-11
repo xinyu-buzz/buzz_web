@@ -35,6 +35,18 @@ const categories = [
     description: 'Technical support inquiries',
   },
   {
+    id: 'beta',
+    label: 'Beta Program',
+    email: 'technical@buzzbuzzin.com',
+    description: 'Beta program inquiries and applications',
+  },
+  {
+    id: 'early-access',
+    label: 'Early Access',
+    email: 'technical@buzzbuzzin.com',
+    description: 'Early access requests for upcoming features',
+  },
+  {
     id: 'support',
     label: 'Customer Care',
     email: 'hello@buzzbuzzin.com',
@@ -195,7 +207,7 @@ export default function Contact() {
   const faqs = [
     {
       question: 'How do pilots join the Buzz Workforce app?',
-      answer: 'Download the Buzz Workforce app from the App Store. Create your pilot profile, verify your credentials, and start accepting flight opportunities instantly. The app uses advanced matching technology to connect you with nearby jobs.',
+      answer: 'Download the Buzz Workforce app from the App Store. Create your pilot profile, verify your credentials, and start accepting flight opportunities instantly. The app uses advanced matching technology to connect you with nearby assignments.',
     },
     {
       question: 'What FAA requirements do I need to meet?',
