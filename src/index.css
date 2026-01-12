@@ -119,28 +119,9 @@ html {
   }
 }
 
-/* Drone propeller animation */
-.propeller {
-  animation: propellerSpin 0.1s linear infinite;
-  transform-origin: center;
-}
-
-@keyframes propellerSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Flying drone shadow and glow */
 .drone-flying svg {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-}
-
-.drone-flying .propeller {
-  animation: propellerSpin 0.08s linear infinite;
 }
 
 /* Mobile landing pad glow */

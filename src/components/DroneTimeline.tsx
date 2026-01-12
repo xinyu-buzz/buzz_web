@@ -117,12 +117,20 @@ const LandingPad = ({
 
 export default function DroneTimeline() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const mobileContainerRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const [pathLength, setPathLength] = useState(0);
   const [dronePosition, setDronePosition] = useState({ x: 0, y: 0, angle: 0 });
   
+  // Desktop scroll tracking
   const { scrollYProgress } = useScroll({
     target: containerRef,
+    offset: ["start 80%", "end 20%"]
+  });
+
+  // Mobile scroll tracking
+  const { scrollYProgress: mobileScrollProgress } = useScroll({
+    target: mobileContainerRef,
     offset: ["start 80%", "end 20%"]
   });
 
@@ -132,8 +140,18 @@ export default function DroneTimeline() {
     restDelta: 0.001
   });
 
+  const smoothMobileProgress = useSpring(mobileScrollProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   // Animate path drawing
   const pathDrawProgress = useTransform(smoothProgress, [0, 1], [0, 1]);
+
+  // Mobile drone Y position - moves from top to bottom of timeline
+  const mobileTimelineHeight = timeline.length * 100; // Approximate height based on items
+  const mobileDroneY = useTransform(smoothMobileProgress, [0, 1], [0, mobileTimelineHeight]);
 
   // Get path length on mount
   useEffect(() => {
@@ -294,9 +312,18 @@ export default function DroneTimeline() {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden relative">
+      <div ref={mobileContainerRef} className="md:hidden relative">
         {/* Vertical flight line */}
         <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-accent opacity-30" />
+        
+        {/* Animated flight line that draws as you scroll */}
+        <motion.div 
+          className="absolute left-10 top-0 w-0.5 bg-gradient-to-b from-primary to-accent origin-top"
+          style={{ 
+            scaleY: smoothMobileProgress,
+            height: '100%',
+          }}
+        />
         
         {/* Mobile timeline items */}
         <div className="space-y-12 pl-6">
@@ -320,12 +347,13 @@ export default function DroneTimeline() {
           ))}
         </div>
 
-        {/* Mobile drone at top */}
+        {/* Mobile drone that follows scroll */}
         <motion.div
-          className="absolute left-10 top-0 -translate-x-1/2 -translate-y-full"
-          initial={{ y: -20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
+          className="absolute left-10 z-20 pointer-events-none drone-flying"
+          style={{ 
+            y: mobileDroneY,
+            x: '-50%',
+          }}
         >
           <DroneIcon className="w-10 h-10" />
         </motion.div>
