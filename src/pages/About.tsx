@@ -76,11 +76,11 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="bg-card-dark border border-border rounded-2xl overflow-hidden h-96 lg:h-auto">
+            <div className="rounded-2xl overflow-hidden h-96 lg:h-auto">
               <img 
                 src="/photos/Buzz.png" 
                 alt="Buzz Team" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fill"
               />
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function About() {
         {/* Stats */}
         <AnimatedSection className="bg-card-dark/50 rounded-3xl p-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            The Numbers Speak
+            Join Our Team
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
