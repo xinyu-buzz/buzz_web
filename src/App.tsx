@@ -12,6 +12,7 @@ import About from './pages/About';
 import Media from './pages/Media';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import Confirmation from './pages/Confirmation';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/media" element={<Media />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="/confirmation" element={<Confirmation />} />
           </Routes>
         </main>
