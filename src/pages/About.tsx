@@ -1,5 +1,6 @@
 import AnimatedSection from '../components/AnimatedSection';
 import DroneTimeline from '../components/DroneTimeline';
+import Button from '../components/Button';
 import { motion } from 'framer-motion';
 
 export default function About() {
@@ -117,15 +118,18 @@ export default function About() {
 
         {/* Stats */}
         <AnimatedSection className="bg-card-dark/50 rounded-3xl p-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-4">
             Join Our Team
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <p className="text-xl text-muted text-center mb-8">
+            Got the goods? We are hiring.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             {[
-              { value: '2,500+', label: 'Pilots Trained' },
-              { value: '15K+', label: 'Flights Logged' },
-              { value: '12', label: 'Training Courses' },
-              { value: '6', label: 'Products & Services' },
+              { value: '5+', label: 'Engineers' },
+              { value: '3+', label: 'Relationship Managers' },
+              { value: '6+', label: 'Vice Presidents' },
+              { value: '4+', label: 'Administrators' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -141,6 +145,11 @@ export default function About() {
                 <div className="text-sm text-muted">{stat.label}</div>
               </motion.div>
             ))}
+          </div>
+          <div className="text-center">
+            <Button variant="primary" href="/contact">
+              Apply Now
+            </Button>
           </div>
         </AnimatedSection>
       </div>
