@@ -150,7 +150,8 @@ export default function DroneTimeline() {
   const pathDrawProgress = useTransform(smoothProgress, [0, 1], [0, 1]);
 
   // Mobile drone Y position - moves from top to bottom of timeline
-  const mobileTimelineHeight = timeline.length * 100; // Approximate height based on items
+  // Each item has ~140px height (56px pad + ~84px from space-y-12 gap)
+  const mobileTimelineHeight = (timeline.length - 1) * 140;
   const mobileDroneY = useTransform(smoothMobileProgress, [0, 1], [0, mobileTimelineHeight]);
 
   // Get path length on mount
@@ -314,16 +315,26 @@ export default function DroneTimeline() {
       {/* Mobile Layout */}
       <div ref={mobileContainerRef} className="md:hidden relative">
         {/* Vertical flight line */}
-        <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-accent opacity-30" />
+        <div className="absolute left-[39px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-accent opacity-30" />
         
         {/* Animated flight line that draws as you scroll */}
         <motion.div 
-          className="absolute left-10 top-0 w-0.5 bg-gradient-to-b from-primary to-accent origin-top"
+          className="absolute left-[39px] top-0 w-0.5 bg-gradient-to-b from-primary to-accent origin-top"
           style={{ 
             scaleY: smoothMobileProgress,
             height: '100%',
           }}
         />
+        
+        {/* Mobile drone that follows scroll - positioned at start */}
+        <motion.div
+          className="absolute left-[39px] top-7 z-20 pointer-events-none drone-flying -translate-x-1/2"
+          style={{ 
+            y: mobileDroneY,
+          }}
+        >
+          <DroneIcon className="w-8 h-8" />
+        </motion.div>
         
         {/* Mobile timeline items */}
         <div className="space-y-12 pl-6">
@@ -346,17 +357,6 @@ export default function DroneTimeline() {
             </div>
           ))}
         </div>
-
-        {/* Mobile drone that follows scroll */}
-        <motion.div
-          className="absolute left-10 z-20 pointer-events-none drone-flying"
-          style={{ 
-            y: mobileDroneY,
-            x: '-50%',
-          }}
-        >
-          <DroneIcon className="w-10 h-10" />
-        </motion.div>
       </div>
     </div>
   );
