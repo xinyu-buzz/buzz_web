@@ -1,5 +1,6 @@
 import AnimatedSection from '../components/AnimatedSection';
 import Button from '../components/Button';
+import FlyingDrone from '../components/FlyingDrone';
 import { motion } from 'framer-motion';
 
 export default function Workforce() {
@@ -115,6 +116,9 @@ export default function Workforce() {
             </motion.div>
           </div>
         </AnimatedSection>
+
+        {/* Drone Flight Animation */}
+        <FlyingDrone variant="arc" className="my-4" />
 
         {/* Features Grid */}
         <AnimatedSection className="mb-20">

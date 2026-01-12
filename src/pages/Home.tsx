@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import EcosystemSection from '../components/EcosystemSection';
 import AnimatedSection from '../components/AnimatedSection';
 import Button from '../components/Button';
+import FlyingDrone from '../components/FlyingDrone';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -66,6 +67,9 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* Drone Takeoff Animation - transitioning from video to content */}
+      <FlyingDrone variant="takeoff" className="bg-gradient-to-b from-transparent to-background-dark/50" />
 
       <Hero />
       <EcosystemSection />
