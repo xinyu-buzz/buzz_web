@@ -59,16 +59,18 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-muted leading-relaxed">
                 <p>
-                  We saw a problem. The drone industry was a mess—fragmented tools, clunky workflows, 
-                  pilots juggling a dozen apps just to get things done. We knew there had to be a better way.
+                  We saw a problem. The drone industry was fragmented, plagued by clunky workflows—customers endlessly 
+                  searching for pilots online, operations bogged down by phone calls and emails, crafting quotes, 
+                  and juggling spreadsheets to manage flights. We knew there had to be a better way.
                 </p>
                 <p>
-                  So we built one. Academy for training. Workforce for assignments. A platform that connects 
-                  pilots and customers seamlessly. Everything a drone pro needs, in one place.
+                  So we created it: an all-in-one app that's a total game changer! With an Academy for cutting-edge 
+                  training and a Workforce for effortless assignments, it's your ultimate platform connecting pilots 
+                  and customers seamlessly. Everything a drone pro needs, right at your fingertips!
                 </p>
                 <p>
-                  And we're just getting started. 2026 brings drone manufacturing, flight sims, and 
-                  next-gen software. One ecosystem. Infinite possibilities. Welcome to the future.
+                  And this is just the beginning! In 2026, we're rolling out drone manufacturing, immersive flight sims, 
+                  and next-gen software. One cohesive ecosystem. Endless possibilities. Welcome to the future!
                 </p>
               </div>
             </div>

@@ -13,8 +13,8 @@ const timeline: TimelineItem[] = [
   { year: '2022', event: 'We went solo. Buzz becomes its own company. No looking back.' },
   { year: '2023', event: 'Buzz Portal launches. Individual and enterprise customers, connected.' },
   { year: '2024', event: 'Rapid growth. More pilots. More training. More momentum.' },
-  { year: '2025', event: 'Buzz App hits the App Store. Mobile-first. Industry-first.' },
-  { year: '2026', event: 'Manufacturing. Simulations. Software. The ecosystem expands.' },
+  { year: '2025', event: 'Mobile-Driven. Industry-Leading.' },
+  { year: '2026', event: 'The ecosystem expands all together on one line.' },
 ];
 
 // Drone SVG component
