@@ -65,6 +65,12 @@ const categories = [
     description: 'Partnership inquiries and collaboration proposals only',
   },
   {
+    id: 'talent',
+    label: 'Talent Acquisition',
+    email: 'ta@buzzbuzzin.com',
+    description: 'Career opportunities and recruitment inquiries',
+  },
+  {
     id: 'media',
     label: 'Media',
     email: 'media@buzzbuzzin.com',
