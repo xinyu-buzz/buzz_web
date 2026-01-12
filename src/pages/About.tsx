@@ -10,7 +10,7 @@ export default function About() {
     },
     {
       title: 'Safety',
-      description: 'Every flight. Every pilot. Safety isn\'t optional—it\'s built in.',
+      description: 'Every flight. Every pilot. Safety isn\'t just a priority—it\'s woven into our very fabric.',
     },
     {
       title: 'Excellence',
@@ -18,7 +18,7 @@ export default function About() {
     },
     {
       title: 'Community',
-      description: 'Pilots, innovators, game-changers. We\'re building this together.',
+      description: 'Pilots, innovators, game-changers—our collective mission to revolutionize the industry',
     },
   ];
 
@@ -32,8 +32,9 @@ export default function About() {
             About Buzz
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto">
-            The complete drone ecosystem. Training. Workforce. Manufacturing. Software. 
-            Everything under one roof. That's the Buzz.
+            The Buzz team is a dynamic mix of ex-military professionals channeling their entrepreneurial spirit, 
+            brilliant engineers passionate about crafting outstanding code, and bold, adventurous trailblazers who 
+            are unapologetically ambitious shaking up the drone industry with their tech and business savvy.
           </p>
         </AnimatedSection>
 
@@ -44,8 +45,9 @@ export default function About() {
               Our Mission
             </h2>
             <p className="text-xl text-text-light leading-relaxed max-w-4xl mx-auto">
-              Give everyone the tools, training, and tech to win in the drone industry. 
-              Make it accessible. Make it safe. Make it efficient. That's what we're here for.
+              To deliver exceptional value for our customers while empowering pilots to achieve a work-life balance 
+              that prioritizes working smarter, not harder. We leverage technology, AI, and machine learning to 
+              drive the drone industry into the future.
             </p>
           </div>
         </AnimatedSection>
@@ -66,7 +68,7 @@ export default function About() {
                 <p>
                   So we created it: an all-in-one app that's a total game changer! With an Academy for cutting-edge 
                   training and a Workforce for effortless assignments, it's your ultimate platform connecting pilots 
-                  and customers seamlessly. Everything a drone pro needs, right at your fingertips!
+                  and customers seamlessly. Everything a drone pro needs is right at their fingertips!
                 </p>
                 <p>
                   And this is just the beginning! In 2026, we're rolling out drone manufacturing, immersive flight sims, 
