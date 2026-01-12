@@ -93,15 +93,15 @@ export default function About() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <AnimatedSection key={value.title} delay={index * 0.1}>
+              <AnimatedSection key={value.title} delay={index * 0.1} className="h-full">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-card-dark border border-border rounded-xl p-6 text-center"
+                  className="bg-card-dark border border-border rounded-xl p-6 text-center h-full flex flex-col"
                 >
                   <h3 className="text-xl font-bold text-accent mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-muted text-sm leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed flex-grow">
                     {value.description}
                   </p>
                 </motion.div>
