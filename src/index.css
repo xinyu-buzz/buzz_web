@@ -67,3 +67,121 @@ html {
   animation: gradient 3s ease infinite;
 }
 
+/* ===== Drone Timeline Styles ===== */
+
+/* Landing pad glow effect */
+.landing-pad-glow {
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.3) 0%, transparent 70%);
+  animation: padGlow 2s ease-in-out infinite;
+  border-radius: 50%;
+  transform: scale(1.5);
+}
+
+.landing-pad.active .landing-pad-glow {
+  animation: padGlowActive 1s ease-in-out infinite;
+}
+
+@keyframes padGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1.3);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes padGlowActive {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+}
+
+/* Landing pad corner lights */
+.landing-light {
+  animation: lightBlink 2s ease-in-out infinite;
+}
+
+@keyframes lightBlink {
+  0%, 100% {
+    opacity: 0.4;
+    box-shadow: 0 0 4px rgba(255, 165, 0, 0.5);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.8), 0 0 16px rgba(255, 165, 0, 0.4);
+  }
+}
+
+/* Drone propeller animation */
+.propeller {
+  animation: propellerSpin 0.1s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes propellerSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Flying drone shadow and glow */
+.drone-flying svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.drone-flying .propeller {
+  animation: propellerSpin 0.08s linear infinite;
+}
+
+/* Mobile landing pad glow */
+.landing-pad-glow-mobile {
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.25) 0%, transparent 70%);
+  animation: padGlowMobile 2.5s ease-in-out infinite;
+  transform: scale(1.4);
+}
+
+@keyframes padGlowMobile {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1.2);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+}
+
+/* Flight path dash animation */
+@keyframes dashFlow {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.flight-path-animated {
+  animation: dashFlow 1s linear infinite;
+}
+
+/* Event card hover effect */
+.event-card {
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 165, 0, 0.1);
+}
+

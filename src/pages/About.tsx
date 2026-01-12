@@ -1,4 +1,5 @@
 import AnimatedSection from '../components/AnimatedSection';
+import DroneTimeline from '../components/DroneTimeline';
 import { motion } from 'framer-motion';
 
 export default function About() {
@@ -21,15 +22,6 @@ export default function About() {
     },
   ];
 
-  const timeline = [
-    { year: '2020', event: 'It started here. Drone workforce under a production house. The seed was planted.' },
-    { year: '2021', event: 'Buzz Academy goes live. First pilots trained. The journey begins.' },
-    { year: '2022', event: 'We went solo. Buzz becomes its own company. No looking back.' },
-    { year: '2023', event: 'Buzz Portal launches. Individual and enterprise customers, connected.' },
-    { year: '2024', event: 'Rapid growth. More pilots. More training. More momentum.' },
-    { year: '2025', event: 'Buzz App hits the App Store. Mobile-first. Industry-first.' },
-    { year: '2026', event: 'Manufacturing. Simulations. Software. The ecosystem expands.' },
-  ];
 
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8">
@@ -117,30 +109,7 @@ export default function About() {
 
         {/* Timeline */}
         <AnimatedSection className="mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-light text-center mb-12">
-            How We Got Here
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            {timeline.map((item, index) => (
-              <AnimatedSection key={item.year} delay={index * 0.1}>
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  className="flex gap-6 mb-8 group"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-primary/20 rounded-xl flex items-center justify-center">
-                      <span className="text-primary font-bold text-lg">{item.year}</span>
-                    </div>
-                  </div>
-                  <div className="flex-grow pt-4">
-                    <div className="bg-card-dark border border-border rounded-xl p-6 group-hover:border-primary/50 transition-colors">
-                      <p className="text-text-light leading-relaxed">{item.event}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
+          <DroneTimeline />
         </AnimatedSection>
 
         {/* Stats */}
