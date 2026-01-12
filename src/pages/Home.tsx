@@ -68,8 +68,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Drone Takeoff Animation - transitioning from video to content */}
-      <FlyingDrone variant="takeoff" className="bg-gradient-to-b from-transparent to-background-dark/50" />
+      {/* Drone Flight Animation - transitioning from video to content */}
+      <FlyingDrone variant="arc" className="bg-gradient-to-b from-transparent to-background-dark/50" />
 
       <Hero />
       <EcosystemSection />
