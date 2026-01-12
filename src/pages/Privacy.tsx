@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
+import Button from '../components/Button';
 
 export default function Privacy() {
   return (
@@ -159,27 +161,13 @@ export default function Privacy() {
           <h2 className="text-3xl font-bold text-text-light mb-6">
             7. Contact Us
           </h2>
-          <p className="text-muted mb-4 leading-relaxed">
+          <p className="text-muted mb-6 leading-relaxed">
             If you have any questions about this Privacy Policy, please contact us:
           </p>
-          <div className="bg-card-dark border border-border rounded-xl p-6 space-y-3">
-            <div className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <a href="mailto:hello@buzzbuzzin.com" className="text-accent hover:underline">
-                hello@buzzbuzzin.com
-              </a>
-            </div>
-            <div className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <span className="text-text-light">
-                314 E. State Street, #200, Ithaca, NY 14850
-              </span>
-            </div>
+          <div className="flex justify-center">
+            <Link to="/contact">
+              <Button>Go to Contact Page</Button>
+            </Link>
           </div>
         </AnimatedSection>
       </div>
