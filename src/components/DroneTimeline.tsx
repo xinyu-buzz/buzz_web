@@ -2,9 +2,15 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 
+interface SubEvent {
+  month: string;
+  description: string;
+}
+
 interface TimelineItem {
   year: string;
   event: string;
+  subEvents?: SubEvent[];
 }
 
 const timeline: TimelineItem[] = [
@@ -14,7 +20,15 @@ const timeline: TimelineItem[] = [
   { year: '2023', event: 'Buzz Portal launches. Individual and enterprise customers, connected.' },
   { year: '2024', event: 'Rapid growth. More pilots. More training. More momentum.' },
   { year: '2025', event: 'Buzz App hits the App Store. Mobile-Driven. Industry-Leading.' },
-  { year: '2026', event: 'Manufacturing. Simulations. Software. The\u00A0ecosystem\u00A0expands.' },
+  { 
+    year: '2026', 
+    event: 'The ecosystem expands.',
+    subEvents: [
+      { month: 'Jan', description: 'Partnership approved by AFRL Regional Network, designed to help identify barrier-breaking innovations for the Air Force and Space Force while advancing them towards commercialization.' },
+      { month: 'Mar', description: 'Flight Simulation launches.' },
+      { month: 'Jun', description: 'Drone Software and Manufacturing launches.' },
+    ]
+  },
 ];
 
 // Drone SVG component
@@ -58,13 +72,15 @@ const LandingPad = ({
   event, 
   isLeft, 
   index,
-  isActive 
+  isActive,
+  subEvents 
 }: { 
   year: string; 
   event: string; 
   isLeft: boolean; 
   index: number;
   isActive: boolean;
+  subEvents?: SubEvent[];
 }) => {
   return (
     <AnimatedSection delay={index * 0.1}>
@@ -108,7 +124,20 @@ const LandingPad = ({
             isLeft ? 'text-left' : 'text-right'
           }`}
         >
-          <p className="text-text-light leading-relaxed text-sm md:text-base">{event}</p>
+          {subEvents && subEvents.length > 0 ? (
+            <div className="space-y-3">
+              {subEvents.map((subEvent, subIndex) => (
+                <div key={subIndex} className={`flex ${isLeft ? 'flex-row' : 'flex-row-reverse'} items-start gap-3`}>
+                  <span className="flex-shrink-0 bg-accent/20 text-accent text-xs font-bold px-2 py-1 rounded">
+                    {subEvent.month}
+                  </span>
+                  <p className="text-text-light leading-relaxed text-sm">{subEvent.description}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-text-light leading-relaxed text-sm md:text-base">{event}</p>
+          )}
         </motion.div>
       </div>
     </AnimatedSection>
@@ -304,6 +333,7 @@ export default function DroneTimeline() {
                     isLeft={isLeft}
                     index={index}
                     isActive={false}
+                    subEvents={item.subEvents}
                   />
                 </div>
               </div>
@@ -351,7 +381,20 @@ export default function DroneTimeline() {
               {/* Event card */}
               <AnimatedSection delay={index * 0.1} className="flex-grow">
                 <div className="bg-card-dark/80 backdrop-blur-sm border border-border rounded-xl p-4 hover:border-accent/50 transition-colors">
-                  <p className="text-text-light text-sm leading-relaxed">{item.event}</p>
+                  {item.subEvents && item.subEvents.length > 0 ? (
+                    <div className="space-y-3">
+                      {item.subEvents.map((subEvent, subIndex) => (
+                        <div key={subIndex} className="flex flex-row items-start gap-2">
+                          <span className="flex-shrink-0 bg-accent/20 text-accent text-xs font-bold px-2 py-1 rounded">
+                            {subEvent.month}
+                          </span>
+                          <p className="text-text-light text-sm leading-relaxed">{subEvent.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-text-light text-sm leading-relaxed">{item.event}</p>
+                  )}
                 </div>
               </AnimatedSection>
             </div>
