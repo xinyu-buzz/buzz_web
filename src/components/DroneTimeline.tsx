@@ -20,15 +20,8 @@ const timeline: TimelineItem[] = [
   { year: '2023', event: 'Buzz Portal launches. Individual and enterprise customers, connected.' },
   { year: '2024', event: 'Rapid growth. More pilots. More training. More momentum.' },
   { year: '2025', event: 'Buzz App hits the App Store. Mobile-Driven. Industry-Leading.' },
-  { 
-    year: '2026', 
-    event: 'The ecosystem expands.',
-    subEvents: [
-      { month: 'Jan', description: 'Partnership approved by AFRL Regional Network, designed to help identify barrier-breaking innovations for the Air Force and Space Force while advancing them towards commercialization.' },
-      { month: 'Mar', description: 'Flight Simulation launches.' },
-      { month: 'Jun', description: 'Drone Software and Manufacturing launches.' },
-    ]
-  },
+  { year: '2026', event: 'Manufacturing. Simulations. Software. The\u00A0ecosystem\u00A0expands.' },
+  { year: 'Jan', event: 'Partnership approved by AFRL Regional Network.' },
 ];
 
 // Drone SVG component
@@ -120,7 +113,7 @@ const LandingPad = ({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
-          className={`event-card flex-grow max-w-md bg-card-dark/80 backdrop-blur-sm border border-border rounded-xl p-5 md:p-6 hover:border-accent/50 transition-all duration-300 ${
+          className={`event-card flex-grow max-w-lg bg-card-dark/80 backdrop-blur-sm border border-border rounded-xl p-5 md:p-6 hover:border-accent/50 transition-all duration-300 ${
             isLeft ? 'text-left' : 'text-right'
           }`}
         >
@@ -367,7 +360,7 @@ export default function DroneTimeline() {
         </motion.div>
         
         {/* Mobile timeline items */}
-        <div className="space-y-12 pl-6">
+        <div className="space-y-12 pl-6 pr-4">
           {timeline.map((item, index) => (
             <div key={item.year} className="relative flex items-start gap-4">
               {/* Landing pad indicator */}
@@ -379,8 +372,8 @@ export default function DroneTimeline() {
               </div>
               
               {/* Event card */}
-              <AnimatedSection delay={index * 0.1} className="flex-grow">
-                <div className="bg-card-dark/80 backdrop-blur-sm border border-border rounded-xl p-4 hover:border-accent/50 transition-colors">
+              <AnimatedSection delay={index * 0.1} className="flex-grow min-w-0">
+                <div className="bg-card-dark/80 backdrop-blur-sm border border-border rounded-xl p-5 hover:border-accent/50 transition-colors">
                   {item.subEvents && item.subEvents.length > 0 ? (
                     <div className="space-y-3">
                       {item.subEvents.map((subEvent, subIndex) => (

@@ -112,7 +112,7 @@ export default function About() {
         </AnimatedSection>
 
         {/* Timeline */}
-        <AnimatedSection className="mb-20">
+        <AnimatedSection className="mb-48">
           <DroneTimeline />
         </AnimatedSection>
 
