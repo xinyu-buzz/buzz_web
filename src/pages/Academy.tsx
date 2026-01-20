@@ -35,7 +35,7 @@ export default function Academy() {
     {
       title: 'UAS Pilot Certification',
       level: 'Beginner to Advanced',
-      duration: '20 hours',
+      duration: '100 hours',
       students: '1,200+ students',
       description: 'Zero to certified. Complete online program to launch your commercial drone career.',
     },
