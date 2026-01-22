@@ -21,14 +21,14 @@ export default function Academy() {
     {
       title: 'Basic Firefighting Training',
       level: 'Professional Development',
-      duration: '8 hours',
+      duration: '36 hours',
       students: '180+ students',
       description: 'When the call comes, you\'re ready. Essential firefighting skills for every day flying.',
     },
     {
       title: 'CPR & First Aid',
       level: 'All Levels',
-      duration: '4 hours',
+      duration: '10 hours',
       students: '340+ students',
       description: 'Save lives. Critical emergency response training that every pilot should have.',
     },
@@ -42,7 +42,7 @@ export default function Academy() {
     {
       title: 'Advanced Flight Techniques',
       level: 'Advanced',
-      duration: '16 hours',
+      duration: 'Online',
       students: '290+ students',
       description: 'Push your limits. Master complex maneuvers and challenging scenarios with the best.',
     },
