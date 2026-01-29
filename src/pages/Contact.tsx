@@ -216,8 +216,8 @@ export default function Contact() {
       answer: 'Download the Buzz Workforce app from the App Store. Create your pilot profile, verify your credentials, and start accepting flight opportunities instantly. The app uses advanced matching technology to connect you with nearby assignments.',
     },
     {
-      question: 'What FAA requirements do I need to meet?',
-      answer: 'You must hold a valid Part 107 Remote Pilot Certificate issued by the FAA. The app verifies your certification status and ensures all pilots meet current FAA regulations before they can accept assignments.',
+      question: 'What Aviation Authority requirements do I need to meet?',
+      answer: 'You must hold a valid remote pilot certification relevant to your country\'s aviation authority. The app verifies your certification status to ensure that all pilots comply with current regulations before accepting assignments.',
     },
     {
       question: 'How does the app track my recurrent training?',
