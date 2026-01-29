@@ -231,16 +231,27 @@ export default function Workforce() {
           </p>
           
           {/* Screenshots Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {[1, 2, 3, 4].map((index) => (
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-7xl mx-auto">
+            {[
+              { name: 'workforce', alt: 'Workforce Dashboard' },
+              { name: 'cockpit', alt: 'Cockpit View' },
+              { name: 'beacon', alt: 'Beacon Community' },
+              { name: 'academy', alt: 'Academy Training' },
+              { name: 'notam', alt: 'NOTAM Alerts' },
+              { name: 'charts', alt: 'Flight Charts' },
+              { name: 'metar', alt: 'METAR Weather' },
+              { name: 'profile', alt: 'Pilot Profile' },
+              { name: 'promotion', alt: 'Promotion Tools' },
+              { name: 'test', alt: 'Flight Test Prep' }
+            ].map((screenshot, index) => (
               <motion.div
-                key={index}
+                key={screenshot.name}
                 whileHover={{ y: -5 }}
                 className="bg-border/20 rounded-2xl overflow-hidden aspect-[9/19] flex items-center justify-center"
               >
-                <img 
-                  src={`/ios_screenshots/screenshot_${index}.png`}
-                  alt={`Buzz Workforce App Screenshot ${index}`}
+                <img
+                  src={`/ios_screenshots/ios_${screenshot.name}.png`}
+                  alt={`Buzz Workforce App - ${screenshot.alt}`}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // Fallback if image doesn't exist
@@ -252,7 +263,7 @@ export default function Workforce() {
                           <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                           </svg>
-                          <p class="text-sm">Screenshot ${index}</p>
+                          <p class="text-sm">${screenshot.alt}</p>
                         </div>
                       `;
                     }
