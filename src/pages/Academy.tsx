@@ -72,7 +72,7 @@ export default function Academy() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="primary" href="https://www.buzzacademy.world/" external>
+            <Button variant="primary" href="https://www.buzzacademy.world/explore" external>
               Visit Academy
             </Button>
             <Button variant="ghost" href="/contact">
