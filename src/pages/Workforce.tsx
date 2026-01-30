@@ -29,7 +29,8 @@ export default function Workforce() {
   };
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index);
+    // Adjust to make the clicked screenshot the center one
+    setCurrentSlide((index - 1 + screenshots.length) % screenshots.length);
   };
 
   const features = [
@@ -259,46 +260,58 @@ export default function Workforce() {
           </p>
 
           {/* Screenshots Carousel */}
-          <div className="relative max-w-md mx-auto">
+          <div className="relative max-w-6xl mx-auto">
             {/* Main Carousel Container */}
-            <div className="relative overflow-hidden rounded-2xl bg-border/20 aspect-[9/19]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-full h-full"
-                >
-                  <img
-                    src={`/ios_screenshots/ios_${screenshots[currentSlide].name}.png`}
-                    alt={`Buzz Workforce App - ${screenshots[currentSlide].alt}`}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Fallback if image doesn't exist
-                      e.currentTarget.style.display = 'none';
-                      const parent = e.currentTarget.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `
-                          <div class="text-muted text-center p-8 h-full flex flex-col justify-center">
-                            <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            <p class="text-sm">${screenshots[currentSlide].alt}</p>
-                          </div>
-                        `;
-                      }
-                    }}
-                  />
-                </motion.div>
-              </AnimatePresence>
+            <div className="relative overflow-hidden px-16">
+              <div className="flex gap-6 justify-center items-center">
+                <AnimatePresence mode="popLayout">
+                  {[0, 1, 2].map((offset) => {
+                    const index = (currentSlide + offset) % screenshots.length;
+                    return (
+                      <motion.div
+                        key={`${index}-${currentSlide}`}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{ 
+                          opacity: 1, 
+                          x: 0,
+                          scale: offset === 1 ? 1.1 : 0.9,
+                          zIndex: offset === 1 ? 10 : 5
+                        }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="bg-border/20 rounded-2xl overflow-hidden aspect-[9/19] flex-shrink-0 w-72"
+                      >
+                        <img
+                          src={`/ios_screenshots/ios_${screenshots[index].name}.png`}
+                          alt={`Buzz Workforce App - ${screenshots[index].alt}`}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback if image doesn't exist
+                            e.currentTarget.style.display = 'none';
+                            const parent = e.currentTarget.parentElement;
+                            if (parent) {
+                              parent.innerHTML = `
+                                <div class="text-muted text-center p-8 h-full flex flex-col justify-center">
+                                  <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                  </svg>
+                                  <p class="text-sm">${screenshots[index].alt}</p>
+                                </div>
+                              `;
+                            }
+                          }}
+                        />
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
+              </div>
             </div>
 
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-card-dark/80 hover:bg-card-dark border border-border rounded-full flex items-center justify-center text-text-light hover:text-primary transition-all duration-200 shadow-lg backdrop-blur-sm"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-card-dark/80 hover:bg-card-dark border border-border rounded-full flex items-center justify-center text-text-light hover:text-primary transition-all duration-200 shadow-lg backdrop-blur-sm z-20"
               aria-label="Previous screenshot"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -308,7 +321,7 @@ export default function Workforce() {
 
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-card-dark/80 hover:bg-card-dark border border-border rounded-full flex items-center justify-center text-text-light hover:text-primary transition-all duration-200 shadow-lg backdrop-blur-sm"
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-card-dark/80 hover:bg-card-dark border border-border rounded-full flex items-center justify-center text-text-light hover:text-primary transition-all duration-200 shadow-lg backdrop-blur-sm z-20"
               aria-label="Next screenshot"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -317,9 +330,9 @@ export default function Workforce() {
             </button>
 
             {/* Current Screenshot Title */}
-            <div className="text-center mt-4">
+            <div className="text-center mt-6">
               <p className="text-lg font-semibold text-text-light">
-                {screenshots[currentSlide].alt}
+                {screenshots[(currentSlide + 1) % screenshots.length].alt}
               </p>
             </div>
 
@@ -330,7 +343,7 @@ export default function Workforce() {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    index === currentSlide
+                    index === (currentSlide + 1) % screenshots.length
                       ? 'bg-primary scale-125'
                       : 'bg-border hover:bg-primary/50'
                   }`}
