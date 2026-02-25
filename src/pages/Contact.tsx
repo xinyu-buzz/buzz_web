@@ -733,10 +733,10 @@ export default function Contact() {
               className="bg-card-dark border border-border rounded-xl p-6"
             >
               <h3 className="text-lg font-bold text-text-light mb-2">
-                US Company, Global Reach
+                US and Canadian Company, Global Reach
               </h3>
               <p className="text-muted text-sm">
-                We are a US company with offices across the United States, but our app serves customers globally.
+                We are a US and Canadian company with offices across North America, but our app serves customers globally.
               </p>
             </motion.div>
 
@@ -747,14 +747,26 @@ export default function Contact() {
               <h3 className="text-lg font-bold text-text-light mb-3">
                 Current Offices
               </h3>
-              <div className="flex items-start gap-3 text-sm">
-                <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <div>
-                  <span className="text-text-light font-semibold">New York</span>
-                  <span className="text-muted">, United States</span>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3 text-sm">
+                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <div>
+                    <span className="text-text-light font-semibold">New York</span>
+                    <span className="text-muted">, United States</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 text-sm">
+                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <div>
+                    <span className="text-text-light font-semibold">Ottawa</span>
+                    <span className="text-muted">, Canada</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
