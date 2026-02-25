@@ -33,7 +33,7 @@ export default function Academy() {
       description: 'Save lives. Critical emergency response training that every pilot should have.',
     },
     {
-      title: 'UAS Pilot Certification',
+      title: 'UAS/RPAS Pilot Certification',
       level: 'Beginner to Advanced',
       duration: '100 hours',
       students: '1,200+ students',
