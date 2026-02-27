@@ -7,12 +7,12 @@ export default function Footer() {
   const productLinks = [
     { name: 'Workforce', path: '/workforce' },
     { name: 'Academy', path: '/academy' },
+    { name: 'Simulations', path: '/simulations' },
+    { name: 'Software', path: '/software' },
   ];
 
   const comingSoonLinks = [
     { name: 'Drones', path: '/drones' },
-    { name: 'Simulations', path: '/simulations' },
-    { name: 'Software', path: '/software' },
   ];
 
   const companyLinks = [

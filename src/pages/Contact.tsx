@@ -733,10 +733,10 @@ export default function Contact() {
               className="bg-card-dark border border-border rounded-xl p-6"
             >
               <h3 className="text-lg font-bold text-text-light mb-2">
-                US and Canadian Company, Global Reach
+                United States and Canadian, Global Reach
               </h3>
               <p className="text-muted text-sm">
-                We are a US and Canadian company with offices across North America, but our app serves customers globally.
+                We were founded in the United States and Canada simultaneously, with offices across North America, but our app serves customers globally.
               </p>
             </motion.div>
 

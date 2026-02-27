@@ -1,5 +1,4 @@
 import AnimatedSection from '../components/AnimatedSection';
-import ComingSoonBadge from '../components/ComingSoonBadge';
 import Button from '../components/Button';
 import { motion } from 'framer-motion';
 
@@ -82,9 +81,7 @@ export default function Software() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
           </motion.div>
-          
-          <ComingSoonBadge className="mb-6" />
-          
+
           <h1 className="text-5xl sm:text-6xl font-bold text-text-light mb-6">
             Drone Software Suite
           </h1>
@@ -100,19 +97,6 @@ export default function Software() {
             <Button variant="ghost" href="/about">
               Learn More
             </Button>
-          </div>
-        </AnimatedSection>
-
-        {/* Timeline */}
-        <AnimatedSection className="mb-20 text-center">
-          <div className="inline-flex items-center gap-4 px-8 py-4 bg-accent/10 border border-accent/30 rounded-xl">
-            <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <div className="text-left">
-              <div className="text-accent font-bold">Expected Launch</div>
-              <div className="text-text-light text-lg font-bold">Q4 2026</div>
-            </div>
           </div>
         </AnimatedSection>
 

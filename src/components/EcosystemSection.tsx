@@ -60,8 +60,7 @@ export default function EcosystemSection() {
         </svg>
       ),
       href: '/simulations',
-      comingSoon: true,
-      comingSoonText: 'March 2026',
+      comingSoon: false,
     },
     {
       title: 'Drone Software',
@@ -72,8 +71,7 @@ export default function EcosystemSection() {
         </svg>
       ),
       href: '/software',
-      comingSoon: true,
-      comingSoonText: 'June 2026',
+      comingSoon: false,
     },
   ];
 
