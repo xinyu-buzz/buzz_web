@@ -733,7 +733,7 @@ export default function Contact() {
               className="bg-card-dark border border-border rounded-xl p-6"
             >
               <h3 className="text-lg font-bold text-text-light mb-2">
-                United States and Canadian, Global Reach
+                United States and Canada, Global Reach
               </h3>
               <p className="text-muted text-sm">
                 We were founded in the United States and Canada simultaneously, with offices across North America, but our app serves customers globally.
