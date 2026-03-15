@@ -81,7 +81,7 @@ export default function About() {
               <img 
                 src="/photos/Buzz.png" 
                 alt="Buzz Team" 
-                className="w-full h-full object-fill"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

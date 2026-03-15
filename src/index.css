@@ -31,7 +31,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #424857 #282C35;
+}
+
+/* Custom scrollbar - WebKit */
 ::-webkit-scrollbar {
   width: 10px;
 }

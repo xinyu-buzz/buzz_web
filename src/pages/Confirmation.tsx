@@ -27,7 +27,7 @@ export default function Confirmation() {
               Your action is confirmed successfully
             </h1>
             <div className="mt-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full" aria-hidden="true">
                 <svg
                   className="w-8 h-8 text-primary"
                   fill="none"

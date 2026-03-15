@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import Button from '../components/Button';
 
@@ -133,9 +132,7 @@ export default function Terms() {
             If you have any questions about these Terms of Service, please contact us:
           </p>
           <div className="flex justify-center">
-            <Link to="/contact">
-              <Button>Go to Contact Page</Button>
-            </Link>
+            <Button href="/contact">Go to Contact Page</Button>
           </div>
         </AnimatedSection>
       </div>
