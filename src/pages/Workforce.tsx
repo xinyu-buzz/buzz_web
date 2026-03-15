@@ -2,10 +2,11 @@ import AnimatedSection from '../components/AnimatedSection';
 import Button from '../components/Button';
 import FlyingDrone from '../components/FlyingDrone';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 export default function Workforce() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
 
   const screenshots = [
     { name: 'workforce', alt: 'Workforce Dashboard' },
@@ -20,23 +21,37 @@ export default function Workforce() {
     { name: 'test', alt: 'Flight Test Prep' }
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % screenshots.length);
-  };
+  }, [screenshots.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + screenshots.length) % screenshots.length);
-  };
+  }, [screenshots.length]);
 
   const goToSlide = (index: number) => {
     // Adjust to make the clicked screenshot the center one
     setCurrentSlide((index - 1 + screenshots.length) % screenshots.length);
   };
 
+  const handleCarouselKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      prevSlide();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      nextSlide();
+    }
+  };
+
+  const handleImageError = (index: number) => {
+    setFailedImages((prev) => new Set(prev).add(index));
+  };
+
   const features = [
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
@@ -45,7 +60,7 @@ export default function Workforce() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
@@ -54,17 +69,17 @@ export default function Workforce() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
       title: 'Beacon Community',
-      description: 'Like neighbors showing up with water when your BBQ catches fire, or rallying for serious matters that risk your community, Buzz is a pilot force that’s there when it counts. ',
+      description: 'Like neighbors showing up with water when your BBQ catches fire, or rallying for serious matters that risk your community, Buzz is a pilot force that\'s there when it counts.',
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -73,7 +88,7 @@ export default function Workforce() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -82,7 +97,7 @@ export default function Workforce() {
     },
     {
       icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
@@ -90,6 +105,8 @@ export default function Workforce() {
       description: 'Native iOS and Android apps that feel natural, work flawlessly, and look stunning.',
     },
   ];
+
+  const activeScreenshot = (currentSlide + 1) % screenshots.length;
 
   return (
     <div className="py-20 px-4 sm:px-6 lg:px-8">
@@ -100,31 +117,32 @@ export default function Workforce() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center justify-center w-20 h-20 bg-primary/20 rounded-2xl mb-6"
+            aria-hidden="true"
           >
             <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
           </motion.div>
-          
+
           <h1 className="text-5xl sm:text-6xl font-bold text-text-light mb-6">
             Buzz Workforce
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-            One tap. The right pilot shows up. Every time. The first-to-market app connecting 
-            verified drone pilots with opportunities instantly. For pilots: accept, show up, deliver. 
+            One tap. The right pilot shows up. Every time. The first-to-market app connecting
+            verified drone pilots with opportunities instantly. For pilots: accept, show up, deliver.
             For Customers: request, relax, receive. Available now on the App Store.
           </p>
-          
+
           <div className="flex flex-col items-center justify-center gap-6">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="primary" href="https://apps.apple.com/us/app/buzz-air/id6755077577" external>
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
                 Download on App Store
               </Button>
             </div>
-            
+
             {/* QR Code */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -135,9 +153,9 @@ export default function Workforce() {
               <div className="text-center">
                 <p className="text-sm text-muted mb-3">Or scan to download</p>
                 <div className="bg-white p-4 rounded-2xl shadow-xl inline-block">
-                  <img 
-                    src="/ios_screenshots/app_store_QR.png" 
-                    alt="Download Buzz Workforce App QR Code"
+                  <img
+                    src="/ios_screenshots/app_store_QR.png"
+                    alt="Download Buzz Workforce App - scan QR code"
                     className="w-40 h-40"
                   />
                 </div>
@@ -185,7 +203,7 @@ export default function Workforce() {
             Why Everyone Wants In
           </h2>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-12 text-center">
-            The first app of its kind. Pilots love it. Customers can't live without it. 
+            The first app of its kind. Pilots love it. Customers can't live without it.
             <br />
             Here's why there's a Buzz.
           </p>
@@ -229,7 +247,7 @@ export default function Workforce() {
                 <ul className="space-y-3">
                   {section.points.map((point, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-muted">{point}</span>
@@ -250,7 +268,7 @@ export default function Workforce() {
         </AnimatedSection>
 
         {/* Screenshot Section */}
-        <AnimatedSection className="bg-card-dark/50 rounded-3xl p-12">
+        <AnimatedSection className="bg-card-dark/50 rounded-3xl p-6 sm:p-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-6 text-center">
             Simple for Anyone, Powerful for Everyone
           </h2>
@@ -260,50 +278,53 @@ export default function Workforce() {
           </p>
 
           {/* Screenshots Carousel */}
-          <div className="relative max-w-6xl mx-auto">
+          <div
+            className="relative max-w-6xl mx-auto"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="App screenshots"
+            onKeyDown={handleCarouselKeyDown}
+          >
             {/* Main Carousel Container */}
-            <div className="relative overflow-hidden px-16">
-              <div className="flex gap-6 justify-center items-center">
+            <div className="relative overflow-hidden px-8 sm:px-16">
+              <div className="flex gap-4 sm:gap-6 justify-center items-center" aria-live="polite">
                 <AnimatePresence mode="popLayout">
                   {[0, 1, 2].map((offset) => {
                     const index = (currentSlide + offset) % screenshots.length;
-	                    return (
-	                      <motion.div
-	                        key={`${index}-${currentSlide}`}
-	                        initial={{ opacity: 0, x: 100 }}
-	                        animate={{ 
-	                          opacity: 1, 
-	                          x: 0,
-	                          zIndex: offset === 1 ? 10 : 5
-	                        }}
-	                        exit={{ opacity: 0, x: -100 }}
-	                        transition={{ duration: 0.4, ease: "easeInOut" }}
-	                        className={`flex-shrink-0 ${offset === 1 ? 'w-80' : 'w-64'}`}
-	                      >
-	                        <div
-	                          className="bg-border/20 rounded-2xl overflow-hidden aspect-[9/19] border border-border/30 [transform:translateZ(0)]"
-	                          style={{ clipPath: 'inset(0 round 1rem)' }}
-	                        >
-                          <img
-                            src={`/ios_screenshots/ios_${screenshots[index].name}.png`}
-                            alt={`Buzz Workforce App - ${screenshots[index].alt}`}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              // Fallback if image doesn't exist
-                              e.currentTarget.style.display = 'none';
-                              const parent = e.currentTarget.parentElement;
-                              if (parent) {
-                                parent.innerHTML = `
-                                  <div class="text-muted text-center p-8 h-full flex flex-col justify-center">
-                                    <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
-                                    <p class="text-sm">${screenshots[index].alt}</p>
-                                  </div>
-                                `;
-                              }
-                            }}
-                          />
+                    const isCenter = offset === 1;
+                    return (
+                      <motion.div
+                        key={`${index}-${currentSlide}`}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={{
+                          opacity: 1,
+                          x: 0,
+                          zIndex: isCenter ? 10 : 5
+                        }}
+                        exit={{ opacity: 0, x: -100 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className={`flex-shrink-0 ${isCenter ? 'w-56 sm:w-80' : 'hidden sm:block sm:w-64'}`}
+                        aria-hidden={!isCenter}
+                      >
+                        <div
+                          className="bg-border/20 rounded-2xl overflow-hidden aspect-[9/19] border border-border/30 [transform:translateZ(0)]"
+                          style={{ clipPath: 'inset(0 round 1rem)' }}
+                        >
+                          {failedImages.has(index) ? (
+                            <div className="text-muted text-center p-8 h-full flex flex-col justify-center">
+                              <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                              <p className="text-sm">{screenshots[index].alt}</p>
+                            </div>
+                          ) : (
+                            <img
+                              src={`/ios_screenshots/ios_${screenshots[index].name}.png`}
+                              alt={`Buzz Workforce App - ${screenshots[index].alt}`}
+                              className="w-full h-full object-cover"
+                              onError={() => handleImageError(index)}
+                            />
+                          )}
                         </div>
                       </motion.div>
                     );
@@ -315,44 +336,48 @@ export default function Workforce() {
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-card-dark/80 hover:bg-card-dark border border-border rounded-full flex items-center justify-center text-text-light hover:text-primary transition-all duration-200 shadow-lg backdrop-blur-sm z-20"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-card-dark/80 hover:bg-card-dark border border-border rounded-full flex items-center justify-center text-text-light hover:text-primary transition-all duration-200 shadow-lg backdrop-blur-sm z-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-label="Previous screenshot"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-card-dark/80 hover:bg-card-dark border border-border rounded-full flex items-center justify-center text-text-light hover:text-primary transition-all duration-200 shadow-lg backdrop-blur-sm z-20"
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-card-dark/80 hover:bg-card-dark border border-border rounded-full flex items-center justify-center text-text-light hover:text-primary transition-all duration-200 shadow-lg backdrop-blur-sm z-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               aria-label="Next screenshot"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
 
             {/* Current Screenshot Title */}
             <div className="text-center mt-6">
-              <p className="text-lg font-semibold text-text-light">
-                {screenshots[(currentSlide + 1) % screenshots.length].alt}
+              <p className="text-lg font-semibold text-text-light" aria-live="polite">
+                {screenshots[activeScreenshot].alt}
               </p>
             </div>
 
             {/* Dot Indicators */}
-            <div className="flex justify-center space-x-2 mt-6">
-              {screenshots.map((_, index) => (
+            <div className="flex justify-center gap-1 mt-6" role="tablist" aria-label="Screenshot navigation">
+              {screenshots.map((screenshot, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    index === (currentSlide + 1) % screenshots.length
+                  role="tab"
+                  aria-selected={index === activeScreenshot}
+                  aria-label={`${screenshot.alt} (${index + 1} of ${screenshots.length})`}
+                  className={`w-3 h-3 rounded-full transition-all duration-200 p-0 min-w-[2.75rem] min-h-[2.75rem] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-accent`}
+                >
+                  <span className={`block w-3 h-3 rounded-full transition-all duration-200 ${
+                    index === activeScreenshot
                       ? 'bg-primary scale-125'
                       : 'bg-border hover:bg-primary/50'
-                  }`}
-                  aria-label={`Go to screenshot ${index + 1}`}
-                />
+                  }`} />
+                </button>
               ))}
             </div>
           </div>

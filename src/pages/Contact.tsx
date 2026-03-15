@@ -93,7 +93,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
-  
+
   // Newsletter subscription state
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubscribing, setIsSubscribing] = useState(false);
@@ -148,6 +148,8 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (isSubmitting) return;
+
     if (!validateForm()) {
       return;
     }
@@ -157,7 +159,7 @@ export default function Contact() {
     setErrorMessage('');
 
     const contactFormUrl = getContactFormUrl();
-    
+
     if (!contactFormUrl) {
       setSubmitStatus('error');
       setErrorMessage('Contact form is not configured. Please try again later.');
@@ -260,8 +262,9 @@ export default function Contact() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="bg-primary/20 border border-primary/30 rounded-2xl p-8 text-center flex-grow flex flex-col justify-center"
+                    role="status"
                   >
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-4" aria-hidden="true">
                       <svg
                         className="w-8 h-8 text-primary"
                         fill="none"
@@ -284,19 +287,20 @@ export default function Contact() {
                     </p>
                     <button
                       onClick={() => setSubmitStatus('idle')}
-                      className="text-primary hover:text-primary/80 font-semibold transition-colors"
+                      className="text-primary hover:text-primary/80 font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
                     >
                       Send another message
                     </button>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="flex-grow flex flex-col">
+                  <form onSubmit={handleSubmit} noValidate className="flex-grow flex flex-col">
                     <div className="space-y-6 flex-grow flex flex-col">
                     {/* Name and Email Row */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-semibold text-text-light mb-2">
-                          Name <span className="text-accent">*</span>
+                          Name <span className="text-accent" aria-hidden="true">*</span>
+                          <span className="sr-only">(required)</span>
                         </label>
                         <input
                           type="text"
@@ -304,18 +308,22 @@ export default function Contact() {
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
+                          aria-required="true"
+                          aria-invalid={!!errors.name}
+                          aria-describedby={errors.name ? 'name-error' : undefined}
                           className={`w-full px-4 py-3 bg-background-dark border ${
                             errors.name ? 'border-red-500' : 'border-border'
                           } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
                           placeholder="Your full name"
                         />
                         {errors.name && (
-                          <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                          <p id="name-error" className="mt-1 text-sm text-red-500" role="alert">{errors.name}</p>
                         )}
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-semibold text-text-light mb-2">
-                          Email <span className="text-accent">*</span>
+                          Email <span className="text-accent" aria-hidden="true">*</span>
+                          <span className="sr-only">(required)</span>
                         </label>
                         <input
                           type="email"
@@ -323,13 +331,16 @@ export default function Contact() {
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
+                          aria-required="true"
+                          aria-invalid={!!errors.email}
+                          aria-describedby={errors.email ? 'email-error' : undefined}
                           className={`w-full px-4 py-3 bg-background-dark border ${
                             errors.email ? 'border-red-500' : 'border-border'
                           } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
                           placeholder="your@email.com"
                         />
                         {errors.email && (
-                          <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                          <p id="email-error" className="mt-1 text-sm text-red-500" role="alert">{errors.email}</p>
                         )}
                       </div>
                     </div>
@@ -369,35 +380,44 @@ export default function Contact() {
                     {/* Category Dropdown */}
                     <div>
                       <label htmlFor="category" className="block text-sm font-semibold text-text-light mb-2">
-                        Category <span className="text-accent">*</span>
+                        Category <span className="text-accent" aria-hidden="true">*</span>
+                        <span className="sr-only">(required)</span>
                       </label>
-                      <select
-                        id="category"
-                        name="category"
-                        value={formData.category}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-3 bg-background-dark border ${
-                          errors.category ? 'border-red-500' : 'border-border'
-                        } rounded-xl text-text-light focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none cursor-pointer`}
-                        style={{
-                          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                          backgroundRepeat: 'no-repeat',
-                          backgroundPosition: 'right 1rem center',
-                          backgroundSize: '1.5rem',
-                        }}
-                      >
-                        <option value="" className="bg-background-dark">Select a category...</option>
-                        {categories.map((cat) => (
-                          <option key={cat.id} value={cat.id} className="bg-background-dark">
-                            {cat.label}
-                          </option>
-                        ))}
-                      </select>
+                      <div className="relative">
+                        <select
+                          id="category"
+                          name="category"
+                          value={formData.category}
+                          onChange={handleInputChange}
+                          aria-required="true"
+                          aria-invalid={!!errors.category}
+                          aria-describedby={errors.category ? 'category-error' : formData.category ? 'category-desc' : undefined}
+                          className={`w-full px-4 py-3 bg-background-dark border ${
+                            errors.category ? 'border-red-500' : 'border-border'
+                          } rounded-xl text-text-light focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none cursor-pointer pr-10`}
+                        >
+                          <option value="" className="bg-background-dark">Select a category...</option>
+                          {categories.map((cat) => (
+                            <option key={cat.id} value={cat.id} className="bg-background-dark">
+                              {cat.label}
+                            </option>
+                          ))}
+                        </select>
+                        <svg
+                          className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted pointer-events-none"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
                       {errors.category && (
-                        <p className="mt-1 text-sm text-red-500">{errors.category}</p>
+                        <p id="category-error" className="mt-1 text-sm text-red-500" role="alert">{errors.category}</p>
                       )}
                       {formData.category && (
-                        <p className="mt-2 text-sm text-muted">
+                        <p id="category-desc" className="mt-2 text-sm text-muted">
                           {categories.find((cat) => cat.id === formData.category)?.description}
                         </p>
                       )}
@@ -406,7 +426,8 @@ export default function Contact() {
                     {/* Subject */}
                     <div>
                       <label htmlFor="subject" className="block text-sm font-semibold text-text-light mb-2">
-                        Subject <span className="text-accent">*</span>
+                        Subject <span className="text-accent" aria-hidden="true">*</span>
+                        <span className="sr-only">(required)</span>
                       </label>
                       <input
                         type="text"
@@ -414,33 +435,40 @@ export default function Contact() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleInputChange}
+                        aria-required="true"
+                        aria-invalid={!!errors.subject}
+                        aria-describedby={errors.subject ? 'subject-error' : undefined}
                         className={`w-full px-4 py-3 bg-background-dark border ${
                           errors.subject ? 'border-red-500' : 'border-border'
                         } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
                         placeholder="Brief summary of your inquiry"
                       />
                       {errors.subject && (
-                        <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                        <p id="subject-error" className="mt-1 text-sm text-red-500" role="alert">{errors.subject}</p>
                       )}
                     </div>
 
                     {/* Message */}
                       <div className="flex-grow flex flex-col">
                       <label htmlFor="message" className="block text-sm font-semibold text-text-light mb-2">
-                        Message <span className="text-accent">*</span>
+                        Message <span className="text-accent" aria-hidden="true">*</span>
+                        <span className="sr-only">(required)</span>
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
+                        aria-required="true"
+                        aria-invalid={!!errors.message}
+                        aria-describedby={errors.message ? 'message-error' : undefined}
                           className={`w-full flex-grow px-4 py-3 bg-background-dark border ${
                           errors.message ? 'border-red-500' : 'border-border'
                           } rounded-xl text-text-light placeholder-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none min-h-[200px]`}
                         placeholder="Tell us more about your inquiry..."
                       />
                       {errors.message && (
-                        <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                        <p id="message-error" className="mt-1 text-sm text-red-500" role="alert">{errors.message}</p>
                       )}
                       </div>
                     </div>
@@ -448,9 +476,12 @@ export default function Contact() {
                     {/* Error Message and Submit Button Container - pushed to bottom */}
                     <div className="mt-auto pt-6">
                     {submitStatus === 'error' && (
-                        <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6">
-                        <p className="text-red-400 text-sm">
-                          {errorMessage || 'Something went wrong. Please try again.'}
+                        <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6" role="alert">
+                        <p className="text-red-400 text-sm flex items-start gap-2">
+                          <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                          </svg>
+                          <span>{errorMessage || 'Something went wrong. Please try again.'}</span>
                         </p>
                       </div>
                     )}
@@ -461,11 +492,12 @@ export default function Contact() {
                       disabled={isSubmitting}
                       whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                       whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                      className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all ${
+                      className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card-dark ${
                         isSubmitting
                           ? 'bg-primary/50 cursor-not-allowed'
                           : 'bg-primary hover:bg-primary/90'
                       } text-white`}
+                      aria-busy={isSubmitting}
                     >
                       {isSubmitting ? (
                         <span className="flex items-center justify-center gap-2">
@@ -474,6 +506,7 @@ export default function Contact() {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
+                            aria-hidden="true"
                           >
                             <circle
                               className="opacity-25"
@@ -511,7 +544,7 @@ export default function Contact() {
                 <div className="space-y-3">
                   {categories.map((cat) => (
                     <div key={cat.id} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" aria-hidden="true" />
                       <div>
                         <p className="text-text-light font-medium text-sm">{cat.label}</p>
                         <p className="text-muted text-xs">{cat.description}</p>
@@ -524,7 +557,7 @@ export default function Contact() {
               {/* Newsletter Subscription */}
               <div className="bg-card-dark border border-border rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center" aria-hidden="true">
                     <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -534,14 +567,15 @@ export default function Contact() {
                 <p className="text-muted text-sm mb-4">
                   Subscribe to our monthly newsletter to stay updated with our latest news and updates.
                 </p>
-                
+
                 {newsletterStatus === 'success' ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="bg-primary/20 border border-primary/30 rounded-xl p-4 text-center"
+                    role="status"
                   >
-                    <div className="inline-flex items-center justify-center w-8 h-8 bg-primary/20 rounded-full mb-2">
+                    <div className="inline-flex items-center justify-center w-8 h-8 bg-primary/20 rounded-full mb-2" aria-hidden="true">
                       <svg
                         className="w-5 h-5 text-primary"
                         fill="none"
@@ -565,7 +599,7 @@ export default function Contact() {
                         setNewsletterStatus('idle');
                         setNewsletterEmail('');
                       }}
-                      className="mt-3 text-primary hover:text-primary/80 text-xs font-semibold transition-colors"
+                      className="mt-3 text-primary hover:text-primary/80 text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
                     >
                       Subscribe another email
                     </button>
@@ -574,32 +608,34 @@ export default function Contact() {
                   <form
                     onSubmit={async (e) => {
                       e.preventDefault();
-                      
+
+                      if (isSubscribing) return;
+
                       if (!newsletterEmail.trim()) {
                         setNewsletterError('Email is required');
                         setNewsletterStatus('error');
                         return;
                       }
-                      
+
                       if (!validateEmail(newsletterEmail)) {
                         setNewsletterError('Please enter a valid email address');
                         setNewsletterStatus('error');
                         return;
                       }
-                      
+
                       setIsSubscribing(true);
                       setNewsletterStatus('idle');
                       setNewsletterError('');
-                      
+
                       const newsletterUrl = getNewsletterUrl();
-                      
+
                       if (!newsletterUrl) {
                         setNewsletterStatus('error');
                         setNewsletterError('Newsletter subscription is not configured. Please try again later.');
                         setIsSubscribing(false);
                         return;
                       }
-                      
+
                       try {
                         const response = await fetch(newsletterUrl, {
                           method: 'POST',
@@ -608,13 +644,13 @@ export default function Contact() {
                           },
                           body: JSON.stringify({ email: newsletterEmail }),
                         });
-                        
+
                         const data = await response.json();
-                        
+
                         if (!response.ok) {
                           throw new Error(data.error || 'Failed to subscribe');
                         }
-                        
+
                         setNewsletterStatus('success');
                         setNewsletterEmail('');
                       } catch (error) {
@@ -629,8 +665,12 @@ export default function Contact() {
                     className="space-y-3"
                   >
                     <div>
+                      <label htmlFor="newsletter-email" className="block text-sm font-semibold text-text-light mb-2">
+                        Email address
+                      </label>
                       <input
                         type="email"
+                        id="newsletter-email"
                         value={newsletterEmail}
                         onChange={(e) => {
                           setNewsletterEmail(e.target.value);
@@ -640,13 +680,15 @@ export default function Contact() {
                           }
                         }}
                         placeholder="your@email.com"
+                        aria-invalid={newsletterStatus === 'error'}
+                        aria-describedby={newsletterStatus === 'error' ? 'newsletter-error' : undefined}
                         className={`w-full px-4 py-2.5 bg-background-dark border ${
                           newsletterStatus === 'error' ? 'border-red-500' : 'border-border'
                         } rounded-xl text-text-light placeholder-muted text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors`}
                         disabled={isSubscribing}
                       />
                       {newsletterStatus === 'error' && newsletterError && (
-                        <p className="mt-1 text-xs text-red-500">{newsletterError}</p>
+                        <p id="newsletter-error" className="mt-1 text-xs text-red-500" role="alert">{newsletterError}</p>
                       )}
                     </div>
                     <motion.button
@@ -654,11 +696,12 @@ export default function Contact() {
                       disabled={isSubscribing}
                       whileHover={{ scale: isSubscribing ? 1 : 1.02 }}
                       whileTap={{ scale: isSubscribing ? 1 : 0.98 }}
-                      className={`w-full py-2.5 px-4 rounded-xl font-semibold text-sm transition-all ${
+                      className={`w-full py-2.5 px-4 rounded-xl font-semibold text-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card-dark ${
                         isSubscribing
                           ? 'bg-primary/50 cursor-not-allowed'
                           : 'bg-primary hover:bg-primary/90'
                       } text-white`}
+                      aria-busy={isSubscribing}
                     >
                       {isSubscribing ? (
                         <span className="flex items-center justify-center gap-2">
@@ -667,6 +710,7 @@ export default function Contact() {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
+                            aria-hidden="true"
                           >
                             <circle
                               className="opacity-25"
@@ -749,7 +793,7 @@ export default function Contact() {
               </h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-3 text-sm">
-                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -759,7 +803,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3 text-sm">
-                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -781,7 +825,7 @@ export default function Contact() {
               <p className="text-muted text-xs mb-3">New offices opening soon:</p>
               <div className="space-y-2">
                 <div className="flex items-start gap-2 text-sm">
-                  <svg className="w-4 h-4 flex-shrink-0 mt-0.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 flex-shrink-0 mt-0.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -791,7 +835,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-start gap-2 text-sm">
-                  <svg className="w-4 h-4 flex-shrink-0 mt-0.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 flex-shrink-0 mt-0.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>

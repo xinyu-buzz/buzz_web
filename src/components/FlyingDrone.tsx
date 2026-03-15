@@ -136,6 +136,7 @@ export default function FlyingDrone({
   return (
     <div 
       ref={containerRef} 
+      aria-hidden="true"
       className={`flying-drone-container relative w-full overflow-hidden ${className}`}
       style={{ height: config.height }}
     >

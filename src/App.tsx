@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -17,29 +18,37 @@ import Confirmation from './pages/Confirmation';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-background-dark">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/workforce" element={<Workforce />} />
-            <Route path="/academy" element={<Academy />} />
-            <Route path="/drones" element={<Drones />} />
-            <Route path="/simulations" element={<Simulations />} />
-            <Route path="/software" element={<Software />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/media" element={<Media />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/confirmation" element={<Confirmation />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <MotionConfig reducedMotion="user">
+      <Router>
+        <ScrollToTop />
+        <div className="min-h-screen flex flex-col bg-background-dark">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-background-dark focus:rounded-lg focus:font-semibold focus:text-sm"
+          >
+            Skip to main content
+          </a>
+          <Navbar />
+          <main id="main-content" className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/workforce" element={<Workforce />} />
+              <Route path="/academy" element={<Academy />} />
+              <Route path="/drones" element={<Drones />} />
+              <Route path="/simulations" element={<Simulations />} />
+              <Route path="/software" element={<Software />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/media" element={<Media />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/confirmation" element={<Confirmation />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </MotionConfig>
   );
 }
 

@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -46,7 +46,7 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary font-semibold text-sm mb-8"
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-2 w-2" aria-hidden="true">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
@@ -62,7 +62,7 @@ export default function Hero() {
           >
             One Platform.
             <br />
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
+            <span className="text-accent">
               Every Possibility.
             </span>
           </motion.h1>
@@ -74,7 +74,7 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-xl sm:text-2xl text-muted max-w-3xl mx-auto mb-10 leading-relaxed"
           >
-            Workforce. Training. Manufacturing. Software. And more. 
+            Workforce. Training. Manufacturing. Software. And more.
             This is how you win in the drone industry.
           </motion.p>
 
@@ -122,7 +122,7 @@ export default function Hero() {
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="flex items-center justify-center gap-2 px-4 py-2 bg-card-dark/50 border border-border rounded-full text-sm w-full"
                 >
-                  <span className="text-lg">{industry.icon}</span>
+                  <span className="text-lg" aria-hidden="true">{industry.icon}</span>
                   <span className="text-muted">{industry.label}</span>
                 </motion.div>
               ))}
@@ -136,6 +136,7 @@ export default function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        aria-hidden="true"
       >
         <svg
           className="w-6 h-6 text-muted"
@@ -154,4 +155,3 @@ export default function Hero() {
     </section>
   );
 }
-

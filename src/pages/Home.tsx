@@ -9,13 +9,14 @@ export default function Home() {
   return (
     <div>
       {/* Video Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-screen w-full overflow-hidden" aria-label="Hero video banner">
         {/* Video Background */}
         <video
           autoPlay
           muted
           loop
           playsInline
+          aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/video/Drone%20video.mov" type="video/quicktime" />
@@ -24,9 +25,9 @@ export default function Home() {
         </video>
 
         {/* Dark Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
 
-        {/* Content Overlay - Positioned at top to avoid overlapping video text */}
+        {/* Content Overlay */}
         <div className="relative z-10 h-full flex flex-col items-center justify-start text-center px-4 pt-32 sm:pt-36 lg:pt-40">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -36,7 +37,7 @@ export default function Home() {
           >
             Experience the Future of
             <br />
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+            <span className="text-accent">
               Drone Technology
             </span>
           </motion.h1>
@@ -48,6 +49,7 @@ export default function Home() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute bottom-10 inset-x-0 z-10 flex justify-center"
+          aria-hidden="true"
         >
           <div className="flex flex-col items-center text-white/80">
             <span className="text-sm mb-2">Scroll to explore</span>
@@ -92,7 +94,7 @@ export default function Home() {
             {[
               {
                 icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 ),
@@ -101,7 +103,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 ),
@@ -110,7 +112,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                   </svg>
                 ),
@@ -147,7 +149,7 @@ export default function Home() {
               Ready to Fly?
             </h2>
             <p className="text-xl text-muted mb-8">
-              The future of drone work is here. First-to-market tech. A community of pros. 
+              The future of drone work is here. First-to-market tech. A community of pros.
               Download the app. Join the movement. Let's go.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -164,4 +166,3 @@ export default function Home() {
     </div>
   );
 }
-
