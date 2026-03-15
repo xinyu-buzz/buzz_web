@@ -24,30 +24,50 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
 
-        {/* Dark Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+        {/* Dark Overlay - animated fade-in */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="absolute inset-0 bg-black/40"
+          aria-hidden="true"
+        />
 
-        {/* Content Overlay */}
+        {/* Content Overlay - staggered entrance */}
         <div className="relative z-10 h-full flex flex-col items-center justify-start text-center px-4 pt-32 sm:pt-36 lg:pt-40">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg"
           >
-            Experience the Future of
-            <br />
-            <span className="text-accent">
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="block"
+            >
+              Experience the Future of
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7, ease: [0.25, 1, 0.5, 1] }}
+              className="block text-accent"
+            >
               Drone Technology
-            </span>
+            </motion.span>
           </motion.h1>
-
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - delayed entrance */}
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: [0, 10, 0] }}
+          transition={{
+            opacity: { duration: 0.6, delay: 1.5 },
+            y: { duration: 2, repeat: Infinity, delay: 1.5 },
+          }}
           className="absolute bottom-10 inset-x-0 z-10 flex justify-center"
           aria-hidden="true"
         >
@@ -70,14 +90,14 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Drone Flight Animation - transitioning from video to content */}
+      {/* Drone Flight Animation */}
       <FlyingDrone variant="arc" className="bg-gradient-to-b from-transparent to-background-dark/50" />
 
       <Hero />
       <EcosystemSection />
 
       {/* Features Section */}
-      <AnimatedSection className="py-20 px-4 sm:px-6 lg:px-8 bg-card-dark/30">
+      <AnimatedSection direction="scale" className="py-20 px-4 sm:px-6 lg:px-8 bg-card-dark/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-text-light mb-4">
@@ -100,6 +120,7 @@ export default function Home() {
                 ),
                 title: 'First to Market',
                 description: 'No one else has this. Mobile-first workforce tech built for drone pilots. Our app didn\'t follow the standard—it set it.',
+                direction: 'left' as const,
               },
               {
                 icon: (
@@ -109,6 +130,7 @@ export default function Home() {
                 ),
                 title: 'Beacon Technology',
                 description: 'When emergencies hit, seconds count. Beacon connects government agencies with nearby pilots instantly. Real impact, right when it matters.',
+                direction: 'up' as const,
               },
               {
                 icon: (
@@ -118,14 +140,16 @@ export default function Home() {
                 ),
                 title: 'Pilots in Control',
                 description: 'Your schedule. Your assignments. Your career. Smart tools for scheduling, compliance, and coordination—all in your hands.',
+                direction: 'right' as const,
               },
             ].map((feature, index) => (
-              <AnimatedSection key={feature.title} delay={index * 0.2} className="h-full">
+              <AnimatedSection key={feature.title} delay={index * 0.15} direction={feature.direction} className="h-full">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-card-dark border border-border rounded-2xl p-8 text-center h-full flex flex-col"
+                  transition={{ duration: 0.25, ease: [0.25, 1, 0.5, 1] }}
+                  className="bg-card-dark border border-border rounded-2xl p-8 text-center h-full flex flex-col group"
                 >
-                  <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-6 text-primary">
+                  <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-bold text-text-light mb-3">
@@ -142,7 +166,7 @@ export default function Home() {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection className="py-20 px-4 sm:px-6 lg:px-8">
+      <AnimatedSection direction="scale" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 rounded-3xl p-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-light mb-4">

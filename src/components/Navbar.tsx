@@ -4,10 +4,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuItemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const location = useLocation();
+
+  // Track scroll position for navbar appearance
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -80,7 +90,6 @@ export default function Navbar() {
         items[items.length - 1]?.focus();
         break;
       case 'Tab':
-        // Allow natural tab behavior but close menu when tabbing out
         requestAnimationFrame(() => {
           if (menuRef.current && !menuRef.current.contains(document.activeElement)) {
             closeMenu();
@@ -90,7 +99,6 @@ export default function Navbar() {
     }
   };
 
-  // Handle button keyboard interaction
   const handleButtonKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowDown' && !menuOpen) {
       e.preventDefault();
@@ -101,7 +109,6 @@ export default function Navbar() {
     }
   };
 
-  // Focus first menu item when menu opens via click
   useEffect(() => {
     if (menuOpen) {
       requestAnimationFrame(() => {
@@ -111,19 +118,26 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className="sticky top-0 z-50 bg-background-dark/90 backdrop-blur-lg border-b border-border" aria-label="Main navigation">
+    <nav
+      className={`sticky top-0 z-50 border-b transition-all duration-300 ease-out ${
+        scrolled
+          ? 'bg-background-dark/95 border-border backdrop-blur-xl shadow-lg shadow-black/10'
+          : 'bg-background-dark/50 border-transparent backdrop-blur-sm'
+      }`}
+      aria-label="Main navigation"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <motion.img
               whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
               src="/android-chrome-192x192.png"
               alt="Buzz Logo"
               className="w-12 h-12 rounded-xl shadow-lg"
             />
-            <span className="text-2xl font-bold text-text-light group-hover:text-accent transition-colors">
+            <span className="text-2xl font-bold text-text-light group-hover:text-accent transition-colors duration-200">
               Buzz
             </span>
           </Link>
@@ -140,7 +154,7 @@ export default function Navbar() {
               ref={buttonRef}
               onClick={() => setMenuOpen(!menuOpen)}
               onKeyDown={handleButtonKeyDown}
-              className="p-2 rounded-lg text-muted hover:text-text-light hover:bg-card-dark transition-colors"
+              className="p-2 rounded-lg text-muted hover:text-text-light hover:bg-card-dark transition-colors duration-200"
               aria-label="Navigation menu"
               aria-expanded={menuOpen}
               aria-haspopup="true"
@@ -166,10 +180,10 @@ export default function Navbar() {
             <AnimatePresence>
               {menuOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  transition={{ duration: 0.15 }}
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
                   id="nav-menu"
                   role="menu"
                   aria-label="Site navigation"
@@ -177,20 +191,30 @@ export default function Navbar() {
                 >
                   <div className="py-2">
                     {navLinks.map((link, index) => (
-                      <Link
+                      <motion.div
                         key={link.path}
-                        to={link.path}
-                        ref={(el) => { menuItemsRef.current[index] = el; }}
-                        role="menuitem"
-                        tabIndex={menuOpen ? 0 : -1}
-                        className={`block px-4 py-3 text-sm font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset ${
-                          isActive(link.path)
-                            ? 'text-accent bg-accent/10'
-                            : 'text-muted hover:text-text-light hover:bg-background-dark/50'
-                        }`}
+                        initial={{ opacity: 0, x: 8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.2,
+                          delay: index * 0.03,
+                          ease: [0.25, 1, 0.5, 1],
+                        }}
                       >
-                        {link.name}
-                      </Link>
+                        <Link
+                          to={link.path}
+                          ref={(el) => { menuItemsRef.current[index] = el; }}
+                          role="menuitem"
+                          tabIndex={menuOpen ? 0 : -1}
+                          className={`block px-4 py-3 text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset ${
+                            isActive(link.path)
+                              ? 'text-accent bg-accent/10'
+                              : 'text-muted hover:text-text-light hover:bg-background-dark/50 hover:pl-5'
+                          }`}
+                        >
+                          {link.name}
+                        </Link>
+                      </motion.div>
                     ))}
                   </div>
                 </motion.div>

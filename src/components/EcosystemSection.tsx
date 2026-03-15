@@ -90,11 +90,15 @@ export default function EcosystemSection() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
-            <AnimatedSection key={product.title} delay={index * 0.1}>
-              <ProductCard {...product} />
-            </AnimatedSection>
-          ))}
+          {products.map((product, index) => {
+            // Vary entrance direction: left column slides right, center slides up, right column slides left
+            const directions = ['left', 'up', 'right', 'left', 'up', 'right'] as const;
+            return (
+              <AnimatedSection key={product.title} delay={index * 0.08} direction={directions[index]}>
+                <ProductCard {...product} />
+              </AnimatedSection>
+            );
+          })}
         </div>
       </div>
     </section>
