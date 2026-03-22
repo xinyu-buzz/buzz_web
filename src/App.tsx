@@ -3,6 +3,7 @@ import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import { usePageTracking } from './hooks/usePageTracking';
 import Home from './pages/Home';
 import Workforce from './pages/Workforce';
 import Academy from './pages/Academy';
@@ -16,10 +17,16 @@ import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Confirmation from './pages/Confirmation';
 
+function PageTracker() {
+  usePageTracking();
+  return null;
+}
+
 function App() {
   return (
     <MotionConfig reducedMotion="user">
       <Router>
+        <PageTracker />
         <ScrollToTop />
         <div className="min-h-screen flex flex-col bg-background-dark">
           <a
