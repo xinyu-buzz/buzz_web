@@ -4,6 +4,7 @@ import FlyingDrone from '../components/FlyingDrone';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useCallback } from 'react';
 
+
 export default function Workforce() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
@@ -161,6 +162,12 @@ export default function Workforce() {
                 </div>
               </div>
             </motion.div>
+            <Button variant="secondary" href="/changelog">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+              Change Logs
+            </Button>
           </div>
         </AnimatedSection>
 

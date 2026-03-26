@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Confirmation from './pages/Confirmation';
+import Changelog from './pages/Changelog';
 
 function PageTracker() {
   usePageTracking();
@@ -50,6 +51,7 @@ function App() {
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/confirmation" element={<Confirmation />} />
+              <Route path="/changelog" element={<Changelog />} />
             </Routes>
           </main>
           <Footer />
