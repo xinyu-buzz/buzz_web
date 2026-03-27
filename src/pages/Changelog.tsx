@@ -51,6 +51,143 @@ const changelogData = [
       'Accessibility enhancements across views',
     ],
   },
+  {
+    version: '1.4.19',
+    date: 'March 13, 2026',
+    changes: [
+      'Added subscription requirement for course enrollment',
+      'Integrated booking disputes into the ticket report system',
+      'Improved Help and Bug Report views with better layout',
+    ],
+  },
+  {
+    version: '1.4.18',
+    date: 'March 12, 2026',
+    changes: [
+      'Updated mission distance preferences and UI elements',
+    ],
+  },
+  {
+    version: '1.4.17',
+    date: 'March 12, 2026',
+    changes: [
+      'Updated booking terminology for mission context',
+      'Added Express Promotion and Ground School test integration',
+      'Added unread message tracking and notification sync',
+      'Added examiner stats to profile views',
+      'Added flight hour claims navigation link',
+      'Implemented measurement system preferences',
+      'Enhanced message input functionality',
+      'Improved academy course management',
+    ],
+  },
+  {
+    version: '1.4.14',
+    date: 'March 10, 2026',
+    changes: [
+      'Added beacon qualification expiration notifications',
+      'Added certificate upload for renewed training steps',
+      'Implemented launch screen and updated authentication logic',
+      'Enhanced deep linking for Marketplace features',
+      'Added releasing status to Marketplace transactions',
+    ],
+  },
+  {
+    version: '1.4.13',
+    date: 'March 9, 2026',
+    changes: [
+      'Added license management notifications and unread count',
+      'Enhanced license management with help article integration',
+      'Improved license deep linking and notification handling',
+      'Added pre-approval status to license approval workflow',
+    ],
+  },
+  {
+    version: '1.4.12',
+    date: 'March 8, 2026',
+    changes: [
+      'Refactored Bug Report into Ticket Report system',
+      'Added image upload to bug reports',
+      'Added license management deep linking',
+      'Improved course unit models for clarity',
+    ],
+  },
+  {
+    version: '1.4.10',
+    date: 'March 6, 2026',
+    changes: [
+      'Added message reactions with notification support',
+      'Added Conversations feature to Cockpit view',
+      'Enhanced messaging and user profile handling',
+      'Added audio level monitoring in Hanger Space',
+      'Improved deep linking for HangerTalk',
+      'Improved Delete Account view layout',
+    ],
+  },
+  {
+    version: '1.4.8',
+    date: 'March 6, 2026',
+    changes: [
+      'Enhanced Hanger Space with active speaker detection',
+      'Improved participant handling and deep linking',
+      'Enhanced pilot license management',
+      'Added follower and following profile fetching',
+    ],
+  },
+  {
+    version: '1.4.6',
+    date: 'March 5, 2026',
+    changes: [
+      'Added booking configuration service for industry support',
+      'Improved exam appointment Zoom meeting handling',
+      'Added expiration date toggle for drone registrations',
+    ],
+  },
+  {
+    version: '1.4.5',
+    date: 'March 4, 2026',
+    changes: [
+      'Added license approval workflow with UI enhancements',
+      'Added booking withdrawal functionality',
+      'Improved beacon and booking backend integration',
+      'Updated leaderboard to fetch top 10 rankings',
+    ],
+  },
+  {
+    version: '1.4.3',
+    date: 'March 3, 2026',
+    changes: [
+      'Enhanced crew status logic in booking details',
+      'Updated booking crew logic with number of pilots',
+      'Improved beacon and booking notification syncing',
+    ],
+  },
+  {
+    version: '1.4.2',
+    date: 'March 3, 2026',
+    changes: [
+      'Added country flags to news articles',
+      'Integrated Beacon Service into Cockpit for volunteer tracking',
+      'Improved booking filtering in checklist and flight plan views',
+    ],
+  },
+  {
+    version: '1.4.1',
+    date: 'March 3, 2026',
+    changes: [
+      'Added leave search and rescue booking functionality',
+      'Improved Beacon view filtering logic',
+    ],
+  },
+  {
+    version: '1.4.0',
+    date: 'March 3, 2026',
+    changes: [
+      'Enhanced NOTAM and weather data handling',
+      'Improved call sign validation in sign-up and profile editing',
+      'Added app version tracking and hanger spaces tables',
+    ],
+  },
 ];
 
 export default function Changelog() {
