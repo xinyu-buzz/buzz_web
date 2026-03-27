@@ -3,6 +3,18 @@ import { motion } from 'framer-motion';
 
 const changelogData = [
   {
+    version: '1.4.26',
+    date: 'March 27, 2026',
+    changes: [
+      'Added TAF (Terminal Aerodrome Forecast) to Cockpit view',
+      'Added tip support for completed bookings',
+      'Improved flight hour claim submission with duplicate prevention',
+      'Enhanced METAR, TAF, and NOTAM cache management for better performance',
+      'Improved hourly forecast layout with sticky headers',
+      'Academy view structure and UI improvements',
+    ],
+  },
+  {
     version: '1.4.25',
     date: 'March 23, 2026',
     changes: [
