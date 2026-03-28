@@ -4,6 +4,17 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 const changelogData = [
   {
+    version: '1.4.27',
+    date: 'March 28, 2026',
+    changes: [
+      'Added aviation weather airport lookup by ICAO, IATA, and FAA identifiers',
+      'Added PIREP, GAIRMET, and SIGMET overlays to VFR charts',
+      'Added pull-to-refresh for METAR and TAF data',
+      'Improved METAR and TAF cache management with deduplication',
+      'Enhanced update popup with redesigned UI and changelog link',
+    ],
+  },
+  {
     version: '1.4.26',
     date: 'March 27, 2026',
     changes: [
