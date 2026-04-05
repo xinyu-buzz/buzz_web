@@ -4,6 +4,16 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 const changelogData = [
   {
+    version: '1.4.28',
+    date: 'April 4, 2026',
+    changes: [
+      'Added SafeFly Timeline for real-time current hour and day group status display',
+      'Improved NOAA KP Index data with both observed and forecast sources',
+      'Added subscription requirement for Flight Reviewer course access',
+      'Improved METAR and TAF view state management and data refresh behavior',
+    ],
+  },
+  {
     version: '1.4.27',
     date: 'March 28, 2026',
     changes: [
