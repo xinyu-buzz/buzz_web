@@ -1,39 +1,29 @@
-// TEMPORARY: imports below are unused while the site is routed to a plain 404.
-// Restore these (uncomment) when reverting.
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { MotionConfig } from 'framer-motion';
-// import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
-// import ScrollToTop from './components/ScrollToTop';
-// import { usePageTracking } from './hooks/usePageTracking';
-// import Home from './pages/Home';
-// import Workforce from './pages/Workforce';
-// import Academy from './pages/Academy';
-// import Drones from './pages/Drones';
-// import Simulations from './pages/Simulations';
-// import Software from './pages/Software';
-// import About from './pages/About';
-// import Media from './pages/Media';
-// import Contact from './pages/Contact';
-// import Privacy from './pages/Privacy';
-// import Terms from './pages/Terms';
-// import Confirmation from './pages/Confirmation';
-// import Changelog from './pages/Changelog';
-import NotFound from './pages/NotFound';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import { usePageTracking } from './hooks/usePageTracking';
+import Home from './pages/Home';
+import Workforce from './pages/Workforce';
+import Academy from './pages/Academy';
+import Drones from './pages/Drones';
+import Simulations from './pages/Simulations';
+import Software from './pages/Software';
+import About from './pages/About';
+import Media from './pages/Media';
+import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Confirmation from './pages/Confirmation';
+import Changelog from './pages/Changelog';
 
-// TEMPORARY: PageTracker is unused while the site is routed to a plain 404.
-// Restore when reverting.
-// function PageTracker() {
-//   usePageTracking();
-//   return null;
-// }
+function PageTracker() {
+  usePageTracking();
+  return null;
+}
 
 function App() {
-  // TEMPORARY: site is routed to a plain 404 page. To revert, restore the
-  // original return block below (Router + Navbar + Routes + Footer).
-  return <NotFound />;
-
-  /*
   return (
     <MotionConfig reducedMotion="user">
       <Router>
@@ -69,7 +59,6 @@ function App() {
       </Router>
     </MotionConfig>
   );
-  */
 }
 
 export default App;
